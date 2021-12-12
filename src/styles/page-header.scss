@@ -1,0 +1,16 @@
+@import "./variables/color.scss";
+.page-header{
+    height:70px;
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding:0 100px 0 100px;
+    .page-logo{
+        color:$top-page-color;
+        font-size:20px;
+    }
+    .page-links{
+        color:$top-page-color;
+    }
+}

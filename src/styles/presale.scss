@@ -1,0 +1,25 @@
+.presale{
+    width: 100%;
+    padding: 0 30px 0 30px;
+    .presale-container{
+        width: 100%;
+        min-height: 200px;
+        border-radius: 15px;
+        background: linear-gradient(to top, #1a2230, #303f54);
+        .presale-info{
+            display: flex;
+            display: flex;
+            justify-content: space-around;
+            .info-item{
+                width: 300px;
+                padding: 20px;
+                text-align: center;
+                color: #deffff;
+                .value{
+                    font-family: Square;
+                    font-size: 25px;
+                }
+            }
+        }
+    }
+}

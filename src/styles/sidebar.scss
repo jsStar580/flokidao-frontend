@@ -1,0 +1,37 @@
+.sidebar-logo{
+    color: #fff;
+    margin-bottom: 50px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.css-zm01lp, .css-owjkmg{
+    justify-content: left !important;
+    align-items: flex-start !important; 
+    &:focus{
+        box-shadow: none !important;
+    }
+    &:hover:not(.sidebar-footer){
+        
+            text-decoration: none !important;
+            color:#5d5e5e !important
+        
+    }
+}
+.sidebar-link{
+    line-height: 50px !important;
+    width: 150px;
+    color:#fff !important;
+    font-weight: normal !important;
+    font-family: -webkit-pictograph;
+}
+
+.sidebar-footer{
+    position: absolute;
+    bottom:20px;
+}
+.sidebar-footer:hover{
+    color:black;
+    position: absolute;
+    bottom:20px;
+}

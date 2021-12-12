@@ -1,0 +1,27 @@
+@import "./variables/color.scss";
+.home{
+    background-color:$top-page-background-color;
+    height: 100vh;
+    .section{
+        width: 100%;
+        display: flex;
+        align-content: space-around;
+        justify-content: space-around;
+        .description_title{
+            color:$top-page-color;
+            font-family: Montserrat Bold;
+            font-style: normal;
+            font-weight: 700;
+            font-size: 55px;
+            text-shadow: 0 4px 4px rgb(0 0 0 / 25%);
+        }
+        .description_body{
+            color:$top-page-color;
+            font-family: Montserrat Medium;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 20px;
+            text-align: center;
+        }
+    }
+}
