@@ -1,4 +1,4 @@
-import { ScaleFade, Slide } from "@chakra-ui/react";
+import { ScaleFade } from "@chakra-ui/react";
 import DashboardCard from "../../../components/DashboardCard";
 
 export default function Dashboard() {
