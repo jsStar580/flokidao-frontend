@@ -7,6 +7,7 @@ import Presale from './views/Page/Presale';
 import Dashboard from './views/Page/Dashboard';
 import Calculator from './views/Page/Caculator';
 import Page from './views/Page';
+import Stake from './views/Page/Stake';
 
 const colors = {
   brand: {
@@ -35,7 +36,7 @@ function App() {
           <Route path="/" element={<Page />}>
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/presale" element={<Presale />} />
-            <Route path="/stack" element={<Presale />} />
+            <Route path="/stack" element={<Stake />} />
             <Route path="/calculator" element={<Calculator />} />
           </Route>
         </Routes>

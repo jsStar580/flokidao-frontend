@@ -14,7 +14,6 @@ export default function Page() {
   const variants = useBreakpointValue({ base: smVariant, md: mdVariant })
 
   const toggleSidebar = () => {
-    console.log(isSidebarOpen);
     setSidebarOpen(!isSidebarOpen)
   }
 

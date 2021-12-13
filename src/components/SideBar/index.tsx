@@ -14,12 +14,6 @@ import { ButtonGroup, IconButton } from '@chakra-ui/button';
 import { SpinnerIcon } from '@chakra-ui/icons'
 import { FaDiscord, FaGithub, FaRegListAlt, FaSlidersH, FaStroopwafel, FaTelegram, FaTwitter } from 'react-icons/fa';
 
-//   interface Props {
-//     onClose: Function
-//     isOpen: boolean
-//     variant:  'drawer' | 'sidebar'
-//   }
-
 const SidebarContent = ({ onClick }: { onClick: Function }) => (
   <VStack>
     <Link to="/dashboard">

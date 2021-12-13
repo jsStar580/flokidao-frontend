@@ -23,8 +23,9 @@
                 font-weight: 700;
                 font-size: 25px;
                 font-style: normal;
-                font-family: monospace;
+                font-family: Montserrat Bold;
                 text-shadow: 0 4px 4px rgb(0 0 0 / 25%);
+                text-align:left;
                 small{
                     font-size: 22px;
                     font-weight: 500;
@@ -34,24 +35,26 @@
             .description{
                 font-size: 15px;
                 color:#728ea2;
+                font-family: Montserrat SemiBold;
+                font-weight: bold;
                 font-style: normal;
                 text-shadow: 0 4px 4px rgb(0 0 0 / 25%);
-                text-align: right;
+                text-align: left;
                 padding:5px;
             }
         }
         .overview-info{
             display: flex;
-            display: flex;
             justify-content: space-around;
+            width: 80%;
             .info-item{
-                // width: 300px;
-                padding: 20px;
+                min-width: 120px;
+                padding: 20px 0 20px 0;
                 text-align: center;
-                color: #deffff;
+                font-family: Montserrat Bold;
+                color: #fff;
                 text-shadow: 0 4px 4px rgb(0 0 0 / 25%);
                 .value{
-                    font-family: initial;
                     font-size: 22px;
                 }
             }

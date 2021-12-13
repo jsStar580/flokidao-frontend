@@ -5,3 +5,17 @@
 @import "./styles/dashboard.scss";
 @import "./styles/dashboard-card.scss";
 @import "./styles/presale.scss";
+@import "./styles/stack.scss";
+@import "./styles/calculator.scss";
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(-45deg, #64c9fc, #446cf6 90%);
+    border-radius: 8px;
+}
+::-webkit-scrollbar-track {
+    box-shadow: #dce6f9 0px 0px 5px inset;
+    border-radius: 10px;
+}
