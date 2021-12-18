@@ -13,6 +13,9 @@ import {
 import { ButtonGroup, IconButton } from '@chakra-ui/button';
 import { SpinnerIcon } from '@chakra-ui/icons'
 import { FaDiscord, FaGithub, FaRegListAlt, FaSlidersH, FaStroopwafel, FaTelegram, FaTwitter } from 'react-icons/fa';
+import { useTypedSelector } from 'hooks/useTypeSelector';
+import { useEffect } from 'react';
+
 
 const SidebarContent = ({ onClick }: { onClick: Function }) => (
   <VStack>
@@ -48,6 +51,9 @@ const SidebarContent = ({ onClick }: { onClick: Function }) => (
 )
 
 export default function SideBar(props: any) {
+
+  const { wallet } = useTypedSelector((state) => state.wallet)
+
   return props.variant === 'sidebar' ? (
     <Box
       position="fixed"
@@ -58,15 +64,28 @@ export default function SideBar(props: any) {
       h="100%"
       bg="#1a2230"
     >
-      <div className="sidebar-logo">FLOKIDAO</div>
+      <div className="sidebar-logo">
+      <img src='Images/Logo/logo.png' alt="logo" style={{height:'50px'}}/><br />
+        {(wallet && wallet != "") && <small>
+          {String(wallet).substring(0, 6) +
+            "..." +
+            String(wallet).substring(38)}</small>
+        }
+      </div>
       <SidebarContent onClick={props.onClose} />
-    </Box>
+    </Box >
   ) : (
     <Drawer isOpen={props.isOpen} placement="left" onClose={() => { props.onClose() }}>
       <DrawerOverlay>
         <DrawerContent bgColor="#496193">
           <DrawerCloseButton onClick={() => { props.onClose() }} />
-          <DrawerHeader>FLOKIDAO</DrawerHeader>
+          <DrawerHeader>
+          <img src='Images/Logo/logo.png' alt="logo" style={{height:'50px'}}/><br />
+            {(wallet && wallet != "") && <small>
+              {String(wallet).substring(0, 6) +
+                "..." +
+                String(wallet).substring(38)}</small>
+            }</DrawerHeader>
           <DrawerBody>
             <SidebarContent onClick={() => { props.onClose() }} />
           </DrawerBody>

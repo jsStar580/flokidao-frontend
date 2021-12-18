@@ -1,6 +1,8 @@
 import { Box, Center, IconButton, Flex, Button, ButtonGroup } from '@chakra-ui/react'
 import { ChevronRightIcon } from '@chakra-ui/icons'
 import { FaInfoCircle } from 'react-icons/fa'
+import TogglerButton from '../TogglerButton';
+import ConnectWallet from '../ConnectWallet';
 
 interface Props {
   onShowSidebar: Function
@@ -8,6 +10,7 @@ interface Props {
 }
 
 const Header = ({ showSidebarButton = true, onShowSidebar }: Props) => {
+
   return (
     <Flex bg="transparent" p={4} color="white" justifyContent="center">
       <Box flex="1">
@@ -25,8 +28,9 @@ const Header = ({ showSidebarButton = true, onShowSidebar }: Props) => {
       <Box flex="1" />
       <Center flex="1" h="40px">
         <ButtonGroup spacing="2">
+          <TogglerButton />
           <Button leftIcon={<FaInfoCircle />} size="md" colorScheme="blue" variant="solid" bgColor="#5c82a547">FLOKIDAO</Button>
-          <Button size="md" colorScheme="blue" variant="solid" bgColor="#5c82a547">Connect Wallet</Button>
+          <ConnectWallet/>
         </ButtonGroup>
       </Center>
     </Flex>

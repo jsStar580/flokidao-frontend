@@ -1,8 +1,14 @@
 .sidebar-logo{
     color: #fff;
     margin-bottom: 50px;
+    display: flex;
     font-size: 20px;
     text-align: center;
+    flex-direction: column;
+    align-items: center;
+    small{
+        font-size: 12px;
+    }
 }
 
 .css-zm01lp, .css-owjkmg{

@@ -92,6 +92,14 @@
                     font-family: monospace;
                     font-size: 13px;
                     width: 100%;
+                    text-align: center;
+                    a{
+                        color: #edf2f7;
+                        font-weight: 300;
+                        font-family: monospace;
+                        font-size: 13px;
+                        width: 100%;
+                    }
                     &:focus{
                         box-shadow: none;
                     }

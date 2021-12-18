@@ -6,7 +6,7 @@ export default function Home() {
     return (
         <div className="home">
             <div className="page-header">
-                <div className="page-logo">FLOKIDAO</div>
+                <div className="page-logo"><img src='Images/Logo/logo.png' alt="logo" style={{height:'50px'}}/></div>
                 <div className="page-links">
                 <ButtonGroup spacing="2">
                     <IconButton size="sm" colorScheme="facebook" aria-label='github' icon={<FaGithub />} />
@@ -17,7 +17,7 @@ export default function Home() {
                 </div>
             </div>
             <div className="section">
-                <img src="Images/Home/Chershire_Cat.24ee16b9.jpeg" width="400px" alt="main-logo"/>
+                <img  src='Images/Logo/logo1.png' width="400px" alt="main-logo"/>
             </div>
             <div className="section">
                 <ButtonGroup spacing='6'>

@@ -18,6 +18,10 @@ import {
     useToast
  } from "@chakra-ui/react";
 import { FaRegShareSquare } from 'react-icons/fa';
+import PresaleAddresses from "./components/IfoCard/PresaleAddresses";
+import PresaleLimits from "./components/IfoCard/PresaleLimits";
+import PresaleMyDetails from "./components/IfoCard/PresaleMyDetails";
+import PresaleRules from "./components/IfoCard/PresaleRules";
 export default function Presale() {
     const { isOpen, onOpen, onClose } = useDisclosure()
     const toast = useToast()
@@ -75,7 +79,7 @@ export default function Presale() {
                         </ModalFooter>
                         </ModalContent>
                     </Modal>
-                    <Accordion width={'80%'} allowMultiple className="presale-detail-info">
+                    <Accordion width={'80%'} allowMultiple defaultIndex={0} className="presale-detail-info">
                         <AccordionItem className="item">
                             {({ isExpanded }) => (
                                 <>
@@ -92,30 +96,7 @@ export default function Presale() {
                                         </AccordionButton>
                                     </h2>
                                     <AccordionPanel pb={4} className="item-body">
-                                        <div className="unit-row">
-                                            <div className="title"><span>Soft Cap:</span></div>
-                                            <div className="value"><span>325 BNB</span></div>
-                                        </div>
-                                        <div className="unit-row">
-                                            <div className="title"><span>Soft Cap Hit:</span></div>
-                                            <div className="value"><span>✔️</span></div>
-                                        </div>
-                                        <div className="unit-row">
-                                            <div className="title"><span>Hard Cap:</span></div>
-                                            <div className="value"><span>650 BNB</span></div>
-                                        </div>
-                                        <div className="unit-row">
-                                            <div className="title"><span>Hard Cap Hit:</span></div>
-                                            <div className="value"><span>✔️</span></div>
-                                        </div>
-                                        <div className="unit-row">
-                                            <div className="title"><span>MIN Contribution:</span></div>
-                                            <div className="value"><span>0.010 BNB</span></div>
-                                        </div>
-                                        <div className="unit-row">
-                                            <div className="title"><span>MAX Contribution:</span></div>
-                                            <div className="value"><span>2.000 BNB</span></div>
-                                        </div>
+                                       <PresaleLimits />
                                     </AccordionPanel>
                                 </>
                             )}
@@ -136,31 +117,7 @@ export default function Presale() {
                                         </AccordionButton>
                                     </h2>
                                     <AccordionPanel pb={4} className="item-body">
-                                        <div className="unit-row">
-                                            <div className="title"><span>Contributions:</span></div>
-                                            <div className="value"><span>0.00 BNB</span></div>
-                                        </div>
-                                        <div className="unit-row">
-                                            <div className="title"><span>Remaining MAX Contribution:</span></div>
-                                            <div className="value"><span>2.00 BNB</span></div>
-                                        </div>
-                                        <div className="unit-row">
-                                            <div className="title"><span>Purchased:</span></div>
-                                            <div className="value"><span>0 FLV</span></div>
-                                        </div>
-                                        <div className="unit-row">
-                                            <div className="title"><span>Claimed:</span></div>
-                                            <div className="value"><span>0 FLV</span></div>
-                                        </div>
-                                        <div className="unit-row">
-                                            <div className="title"><span>Maxed Out Contributions:</span></div>
-                                            <div className="value"><span>❌</span></div>
-                                        </div>
-                                        <div className="unit-row">
-                                            <div className="title"><span>Maxed Out Claims:</span></div>
-                                            <div className="value"><span>❌</span></div>
-                                        </div>
-                                        <Button mt={5} variant="link" color="#fff" className="presale-link" rightIcon={<FaRegShareSquare />}>View My Wallet on BSCScan.com</Button>
+                                        <PresaleMyDetails />
                                     </AccordionPanel>
                                 </>
                             )}
@@ -181,14 +138,7 @@ export default function Presale() {
                                         </AccordionButton>
                                     </h2>
                                     <AccordionPanel pb={4} className="item-body">
-                                        <div className="unit-row">
-                                            <div className="title"><span>Presale:</span></div>
-                                            <Button variant="link" color="#fff" className="presale-link" rightIcon={<FaRegShareSquare />}>0xF1A45556a43451E0B23d70b913FdaEd862165cAA</Button>
-                                        </div>
-                                        <div className="unit-row" style={{marginTop:'5px'}}>
-                                            <div className="title"><span>Token:</span></div>
-                                            <Button variant="link" color="#fff" className="presale-link" rightIcon={<FaRegShareSquare />}>0xF1a45E52d6d11D0e591d4F18DA9D88a4c266b300</Button>
-                                        </div>
+                                        <PresaleAddresses />
                                     </AccordionPanel>
                                 </>
                             )}
@@ -209,34 +159,7 @@ export default function Presale() {
                                         </AccordionButton>
                                     </h2>
                                     <AccordionPanel pb={4} className="item-body">
-                                        <div className="unit-row">
-                                            <div className="title"><span>Contributions Enabled:</span></div>
-                                            <div className="value"><span>❌</span></div>
-                                        </div>
-                                        <div className="unit-row">
-                                            <div className="title"><span>Claims Enabled:</span></div>
-                                            <div className="value"><span>✔️</span></div>
-                                        </div>
-                                        <div className="unit-row">
-                                            <div className="title"><span>Whitelist Enforced:</span></div>
-                                            <div className="value"><span>❌</span></div>
-                                        </div>
-                                        <div className="unit-row">
-                                            <div className="title"><span>Time Window Enforced:</span></div>
-                                            <div className="value"><span>❌</span></div>
-                                        </div>
-                                        <div className="unit-row">
-                                            <div className="title"><span>Cap Enforced:</span></div>
-                                            <div className="value"><span>✔️</span></div>
-                                        </div>
-                                        <div className="unit-row">
-                                            <div className="title"><span>Timed Presale Overrides Allowed</span></div>
-                                            <div className="value"><span>✔️</span></div>
-                                        </div>
-                                        <div className="unit-row">
-                                            <div className="title"><span>Capped Presale Overrides Allowed</span></div>
-                                            <div className="value"><span>✔️</span></div>
-                                        </div>
+                                       <PresaleRules />
                                     </AccordionPanel>
                                 </>
                             )}
