@@ -1,6 +1,6 @@
 @import "./variables/color.scss";
 .page{
-    background-color:$page-background-color;
+    background:$page-background-color;
     min-height: 100vh;
     .page-container{
         display: flex;

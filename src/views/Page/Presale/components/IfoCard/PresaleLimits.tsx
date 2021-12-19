@@ -1,10 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import styled from 'styled-components'
-import { useWeb3React } from '@web3-react/core'
 import { usePublicPresaleFLOKIContract } from 'hooks/useContract'
-import { Fonts } from 'style/FlokiStyle'
 import AnimatedNumbers from './AnimatedNumbers';
-import { getImpliedNodeFormatForFile } from 'typescript'
 import { useTypedSelector } from 'hooks/useTypeSelector'
 
 const PresaleLimits = () => {

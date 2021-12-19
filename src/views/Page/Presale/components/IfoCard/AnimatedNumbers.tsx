@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from 'react'
 import { useCountUp } from 'react-countup'
-import { Text } from '@pancakeswap-libs/uikit'
 import { Fonts } from 'style/FlokiStyle'
 import styled from 'styled-components'
 

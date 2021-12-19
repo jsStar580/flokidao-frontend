@@ -1,8 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import styled from 'styled-components'
-import useAccount from 'hooks/useAccount';
 import { usePublicPresaleFLOKIContract } from 'hooks/useContract';
-import { Fonts } from 'style/FlokiStyle';
 import { Button } from '@chakra-ui/react';
 import { FaRegShareSquare } from 'react-icons/fa';
 import { useTypedSelector } from 'hooks/useTypeSelector';

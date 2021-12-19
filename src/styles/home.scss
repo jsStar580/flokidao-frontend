@@ -1,27 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+SC&display=swap');
 @import "./variables/color.scss";
 .home{
-    background-color:$top-page-background-color;
+    background-color:#fff;
     height: 100vh;
     .section{
         width: 100%;
         display: flex;
+        padding: 0 150px 0 150px;
         align-content: space-around;
-        justify-content: space-around;
-        .description_title{
-            color:$top-page-color;
-            font-family: Montserrat Bold;
-            font-style: normal;
-            font-weight: 700;
-            font-size: 55px;
-            text-shadow: 0 4px 4px rgb(0 0 0 / 25%);
+        justify-content: space-between;
+        .description{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .description_title{
+                color:black;
+                font-family: 'Alegreya SC', serif;
+                font-style: normal;
+                font-weight: 700;
+                font-size: 40px;
+                margin-top: 40px;
+                text-align: center;
+                // text-shadow: 0 4px 4px rgb(0 0 0 / 25%);
+            }
+            .description_body{
+                margin-top: 40px;
+                color:black;
+                font-family: 'Alegreya SC', serif;
+                font-style: normal;
+                font-weight: 500;
+                font-size: 33px;
+                text-align: center;
+            }
+            .presaleBtn{
+                font-family: 'Alegreya SC', serif;
+                font-size: 25px;
+                small{
+                    font-size: 20px;
+                    font-family: 'Alegreya SC', serif;
+                }
+            }
         }
-        .description_body{
-            color:$top-page-color;
-            font-family: Montserrat Medium;
-            font-style: normal;
-            font-weight: 500;
-            font-size: 20px;
-            text-align: center;
+        .home-footer{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            bottom: 20px;
+            width: 80%;
+            
+            .social-links{
+                Button{
+                    color:black;
+                    font-size: 45px;
+                    &:focus{
+                        box-shadow: none;
+                    }
+                }
+            }
+            .other-links{
+                margin-left: 20px;
+                font-size: 22px;
+                font-family: 'Alegreya SC', serif;             
+                big {
+                    font-family: 'Alegreya SC', serif;    
+                    font-size: 28px;
+                }
+            }
         }
     }
 }

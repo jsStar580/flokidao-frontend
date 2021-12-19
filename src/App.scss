@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+SC&display=swap');
 @import "./styles/home.scss";
 @import "./styles/page-header.scss";
 @import "./styles/pages.scss";
@@ -7,6 +8,7 @@
 @import "./styles/presale.scss";
 @import "./styles/stack.scss";
 @import "./styles/calculator.scss";
+
 
 ::-webkit-scrollbar {
     width: 8px;
@@ -18,4 +20,32 @@
 ::-webkit-scrollbar-track {
     box-shadow: #dce6f9 0px 0px 5px inset;
     border-radius: 10px;
+}
+*{
+    font-family: 'Alegreya SC', serif;
+}
+.contribute-modal{
+    border-radius: 30px !important;
+    span{
+        color:#3f095a;}
+        *{
+            font-family:ui-monospace;
+            text-shadow: 0 4px 4px rgb(0 0 0 / 25%);
+        
+        }
+        input{
+            border-radius: 20px;
+        }
+        .chakra-modal__header{
+            color: #1fc7d4;
+        }
+        .custom-button{
+            background-color: rgb(31, 199, 212);
+            box-shadow: rgb(14 14 44 / 40%) 0px -1px 0px 0px inset;
+            color:#fff;
+            border-radius: 20px;
+            &:hover{
+                background-color: rgb(16, 131, 139);
+            }
+        }
 }

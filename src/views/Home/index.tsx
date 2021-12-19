@@ -1,45 +1,59 @@
-import { Button, ButtonGroup } from '@chakra-ui/react';
-import { IconButton } from "@chakra-ui/button"
+import { Button, ButtonGroup, Box } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
-import { FaDiscord, FaGithub, FaTelegram, FaTwitter } from 'react-icons/fa';
+import {  FaTelegram, FaTwitter, FaMedium } from 'react-icons/fa';
+
+import * as S from './styles';
+
 export default function Home() {
+
     return (
-        <div className="home">
-            <div className="page-header">
-                <div className="page-logo"><img src='Images/Logo/logo.png' alt="logo" style={{height:'50px'}}/></div>
-                <div className="page-links">
-                <ButtonGroup spacing="2">
-                    <IconButton size="sm" colorScheme="facebook" aria-label='github' icon={<FaGithub />} />
-                    <IconButton size="sm" colorScheme="twitter" aria-label='twitter' icon={<FaTwitter />} />
-                    <IconButton size="sm" colorScheme="telegram" aria-label='telegram' icon={<FaTelegram />} />
-                    <IconButton size="sm" colorScheme="whatsapp" aria-label='discord' icon={<FaDiscord />} />
-                </ButtonGroup>
+        <S.Container>
+            <div className="home">
+                <div className="page-header">
+                    <div className="page-links">
+                        <ButtonGroup mt={5} spacing={10}>
+                            <Button>DAPP</Button>
+                            <Button>DAPP</Button>
+                            <Button>DAPP</Button>
+                            <Link to="/dashboard"><Button className='active'>DAPP</Button></Link>
+                        </ButtonGroup>
+                    </div>
+                    <div className="page-logo">F<small>LOKI</small>D<small>AO</small></div>
+                </div>
+
+                <div className="section">
+                    <div>
+                        <div className='description'>
+                            <div className='description_title'>THE PEOPLES DAO</div>
+                            <div className='description_body'>
+                                BACKEND WITH
+                                <Box height="20px"></Box>
+                                WORLD LEADING ASSET CLASSES
+                            </div>
+                            <Link to="/presale">
+                                <Button mt={70} className='presaleBtn' size="lg" zIndex="2" height="70px" width="250px" style={{ borderRadius: '0px', backgroundColor: "yellow" }}>P<small>RESALE</small></Button>
+                            </Link>
+
+                        </div>
+                    </div>
+                    <img src='Images/Home/logo1.png' width="400px" alt="main-logo" />
+                </div>
+                <div className="section">
+                    <img src='Images/Home/sketch-bank.png' width="80%" style={{ position: 'fixed', bottom: '0px' }} alt="squid-game-piggy-bank" />
+                    <div className='home-footer'>
+                        <div className='social-links'>
+                            <ButtonGroup spacing={6}>
+                                <Button variant="link"><FaTwitter /></Button>
+                                <Button variant="link"><FaTelegram /></Button>
+                                <Button variant="link"><FaMedium /></Button>
+                            </ButtonGroup>
+                        </div>
+                        <div className='other-links'>
+                            PROTOCOL <big>O</big>WNED <big>L</big>IQUIDITY | <big>G</big>ROWING <big>T</big>REASURY | <big>D</big>ECENTRALIZED <big>G</big>OVERNANCE
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div className="section">
-                <img  src='Images/Logo/logo1.png' width="400px" alt="main-logo"/>
-            </div>
-            <div className="section">
-                <ButtonGroup spacing='6'>
-                    <Link to="/dashboard">
-                        <Button size="md" colorScheme="blue" width='200px' bgColor="#60636896" fontFamily="Montserrat Semibold">Enter App</Button>
-                    </Link>
-                    <Link to="/presale">
-                        <Button size="md" colorScheme='blue' width='200px' bgColor="#60636896" fontFamily="Montserrat Semibold">Presale</Button>
-                    </Link>
-                </ButtonGroup>
-            </div>
-            <div className="section">
-                <span className="description_title">
-                    The Defi Flokidao
-                </span>
-            </div>
-            <div className="section">
-                <span className="description_body">
-                    Financial tools to grow your wealth-stake<br />
-                    and earn compounding interest
-                </span>
-            </div>
-        </div>
+        </S.Container>
     )
 }

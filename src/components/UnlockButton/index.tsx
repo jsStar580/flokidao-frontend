@@ -15,7 +15,7 @@ import { useTypedSelector } from 'hooks/useTypeSelector';
 import { useDispatch } from 'react-redux';
 import { connectWallet } from 'redux/actionCreators';
 
-const ConnectWallet = () => {
+const UnlockButton = () => {
     const { isOpen, onOpen, onClose } = useDisclosure()
     const [currentAddr, setCurrentAddr] = useState("");
     const dispatch = useDispatch();
@@ -77,22 +77,12 @@ const ConnectWallet = () => {
     }
 
     return (
-        <>{
-            (currentAddr && currentAddr != "") && <Button size="md"variant="solid" className="headerAction">
-                {
-                    String(currentAddr).substring(0, 6) +
-                    "..." +
-                    String(currentAddr).substring(38)
-                }
-            </Button>
-        }
-            {
-                (!currentAddr || currentAddr == "") && <Button onClick={connectWalletPressed} size="md"  variant="solid"  className="headerAction">
-                    Connect Wallet
-                </Button>
-            }
+        <><Button onClick={connectWalletPressed} size="md" colorScheme="blue" variant="solid" bgColor="#5c82a547">
+            Unlock Wallet
+        </Button>
+
         </>
     );
 }
 
-export default ConnectWallet;
+export default UnlockButton;

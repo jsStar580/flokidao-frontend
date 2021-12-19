@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import styled from 'styled-components'
 import { usePublicPresaleFLOKIContract } from 'hooks/useContract';
-import { Fonts } from 'style/FlokiStyle';
 import { useIceCreamMan } from 'hooks/useIceCreamMan';
 import { useTypedSelector } from 'hooks/useTypeSelector';
 

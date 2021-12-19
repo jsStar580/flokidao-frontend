@@ -23,9 +23,10 @@
                 font-weight: 700;
                 font-size: 25px;
                 font-style: normal;
-                font-family: Montserrat Bold;
+                font-family: unset;
                 text-shadow: 0 4px 4px rgb(0 0 0 / 25%);
-                text-align:left;
+                text-align:center;
+                margin-bottom: 10px;
                 small{
                     font-size: 22px;
                     font-weight: 500;
@@ -38,7 +39,7 @@
                 font-family: Montserrat SemiBold;
                 font-weight: bold;
                 font-style: normal;
-                text-shadow: 0 4px 4px rgb(0 0 0 / 25%);
+                // text-shadow: 0 4px 4px rgb(0 0 0 / 25%);
                 text-align: left;
                 padding:5px;
             }
@@ -56,6 +57,26 @@
                 text-shadow: 0 4px 4px rgb(0 0 0 / 25%);
                 .value{
                     font-size: 22px;
+                }
+            }
+        }
+        .info{
+            width: 80%;
+            padding: 15px;
+            .unit-row{
+                color: #728ea2;
+                font-weight: lighter;
+                font-family: -webkit-pictograph;
+                text-align: left;
+                .title{
+                    width:calc(100% - 100px);
+                    display: inline-block;
+                    text-align: left;
+                }
+                .value{
+                    width:100px;
+                    display: inline-block;
+                    text-align: right;
                 }
             }
         }
@@ -106,5 +127,6 @@
                 }
             }
         }
+        
     }
 }

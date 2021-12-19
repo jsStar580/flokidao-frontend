@@ -12,13 +12,13 @@ import {
 } from '@chakra-ui/react'
 import { ButtonGroup, IconButton } from '@chakra-ui/button';
 import { SpinnerIcon } from '@chakra-ui/icons'
-import { FaDiscord, FaGithub, FaRegListAlt, FaSlidersH, FaStroopwafel, FaTelegram, FaTwitter } from 'react-icons/fa';
+import { FaBook, FaDiscord, FaGithub, FaMedium, FaRegListAlt, FaSlidersH, FaStroopwafel, FaTelegram, FaTwitter } from 'react-icons/fa';
 import { useTypedSelector } from 'hooks/useTypeSelector';
 import { useEffect } from 'react';
-
+import * as S from './styles';
 
 const SidebarContent = ({ onClick }: { onClick: Function }) => (
-  <VStack>
+  <VStack className='sidebar-content'>
     <Link to="/dashboard">
       <Button className="sidebar-link" leftIcon={<FaSlidersH />} variant="link" onClick={() => { onClick() }} w="100%">
         Dashboard
@@ -39,14 +39,14 @@ const SidebarContent = ({ onClick }: { onClick: Function }) => (
         Calculator
       </Button>
     </Link>
-    <div className="sidebar-footer">
-      <ButtonGroup spacing="2">
-        <IconButton size="sm" aria-label='github' icon={<FaGithub />} />
-        <IconButton size="sm" aria-label='twitter' icon={<FaTwitter />} />
-        <IconButton size="sm" aria-label='telegram' icon={<FaTelegram />} />
-        <IconButton size="sm" aria-label='discord' icon={<FaDiscord />} />
-      </ButtonGroup>
-    </div>
+
+    <Link to="/doc">
+      <Button mt={50} className="sidebar-link" leftIcon={<FaBook />} variant="link" onClick={() => { onClick() }} w="100%">
+        Docs
+      </Button>
+    </Link>
+
+
   </VStack>
 )
 
@@ -55,32 +55,46 @@ export default function SideBar(props: any) {
   const { wallet } = useTypedSelector((state) => state.wallet)
 
   return props.variant === 'sidebar' ? (
-    <Box
-      position="fixed"
-      left={0}
-      p={5}
-      w="200px"
-      top={0}
-      h="100%"
-      bg="#1a2230"
-    >
-      <div className="sidebar-logo">
-      <img src='Images/Logo/logo.png' alt="logo" style={{height:'50px'}}/><br />
-        {(wallet && wallet != "") && <small>
-          {String(wallet).substring(0, 6) +
-            "..." +
-            String(wallet).substring(38)}</small>
-        }
-      </div>
-      <SidebarContent onClick={props.onClose} />
-    </Box >
+    <S.Container>
+      <Box
+        position="fixed"
+        left={0}
+        p={5}
+        w="280px"
+        top={0}
+        h="100%"
+        className='sidebar'
+
+      >
+        <div className="sidebar-logo">
+          <img src='Images/Logo/logo1.png' alt="logo" style={{ width: '60%' }} />
+          <span>Floki Dao</span>
+          {(wallet && wallet != "") && <small>
+            {String(wallet).substring(0, 6) +
+              "..." +
+              String(wallet).substring(38)}</small>
+          }
+        </div>
+        <SidebarContent onClick={props.onClose} />
+        <Box />
+        <Box />
+        <div className="sidebar-footer">
+          <ButtonGroup spacing="2">
+            <Button variant="link"><FaTwitter /></Button>
+            <Button variant="link"><FaTelegram /></Button>
+            <Button variant="link"><FaMedium /></Button>
+          </ButtonGroup>
+        </div>
+      </Box >
+    </S.Container>
+
   ) : (
     <Drawer isOpen={props.isOpen} placement="left" onClose={() => { props.onClose() }}>
       <DrawerOverlay>
         <DrawerContent bgColor="#496193">
           <DrawerCloseButton onClick={() => { props.onClose() }} />
           <DrawerHeader>
-          <img src='Images/Logo/logo.png' alt="logo" style={{height:'50px'}}/><br />
+            <img src='Images/Logo/logo.png' alt="logo" style={{ height: '50px' }} /><br />
             {(wallet && wallet != "") && <small>
               {String(wallet).substring(0, 6) +
                 "..." +
@@ -88,6 +102,13 @@ export default function SideBar(props: any) {
             }</DrawerHeader>
           <DrawerBody>
             <SidebarContent onClick={() => { props.onClose() }} />
+            <div className="sidebar-footer">
+              <ButtonGroup spacing="2">
+                <Button variant="link"><FaTwitter /></Button>
+                <Button variant="link"><FaTelegram /></Button>
+                <Button variant="link"><FaMedium /></Button>
+              </ButtonGroup>
+            </div>
           </DrawerBody>
         </DrawerContent>
       </DrawerOverlay>

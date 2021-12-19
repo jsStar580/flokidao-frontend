@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import styled from 'styled-components'
 import { useTypedSelector } from 'hooks/useTypeSelector';
 import { usePublicPresaleFLOKIContract } from 'hooks/useContract';
-import { Fonts } from 'style/FlokiStyle';
 import AnimatedNumbers from './AnimatedNumbers';
 import { useRefundsEnabled } from 'hooks/useRefundsEnabled';
 import { ZERO } from './PresaleAddresses';
@@ -57,7 +55,7 @@ const PresaleMyDetails = () => {
                 typeof (holdersClaimableFLV) == "undefined" ? '' : <div className="unit-row">
                     <div className="title"><span>Purchased:</span></div>
                     <div className="value"><span>
-                        <AnimatedNumbers decimals={0} value={holdersClaimableFLV / 1e9} suffix={' FLV'} />
+                        <AnimatedNumbers decimals={0} value={holdersClaimableFLV / 1e9} suffix={' NFOHM'} />
                     </span></div>
                 </div>
             }
@@ -65,7 +63,7 @@ const PresaleMyDetails = () => {
                 typeof (claimedFLV) == "undefined" ? '' : <div className="unit-row">
                     <div className="title"><span>Claimed:</span></div>
                     <div className="value"><span>
-                        <AnimatedNumbers decimals={0} value={claimedFLV / 1e9} suffix={' FLV'} />
+                        <AnimatedNumbers decimals={0} value={claimedFLV / 1e9} suffix={' NFOHM'} />
                     </span></div>
                 </div>
             }
