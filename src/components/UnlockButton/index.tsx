@@ -7,7 +7,8 @@ import {
     ModalCloseButton,
     ModalBody,
     useDisclosure,
-    ModalFooter
+    ModalFooter,
+    useToast
 } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import Web3 from 'web3'
@@ -16,6 +17,7 @@ import { useDispatch } from 'react-redux';
 import { connectWallet } from 'redux/actionCreators';
 
 const UnlockButton = () => {
+    const toast = useToast()
     const { isOpen, onOpen, onClose } = useDisclosure()
     const [currentAddr, setCurrentAddr] = useState("");
     const dispatch = useDispatch();
@@ -49,9 +51,13 @@ const UnlockButton = () => {
                     ],
                 })
 
-                await (window as any).ethereum.request({ method: "eth_requestAccounts" });
+                await (window as any).ethereum.request({
+                    method: 'wallet_requestPermissions',
+                    params: [{ eth_accounts: {} }],
+                })
                 let accounts = await (window as any).ethereum.request({ method: 'eth_accounts' })
                 setCurrentAddr(accounts[0]);
+                localStorage.setItem('disconnected', 'false');
                 dispatch(connectWallet(accounts[0]));
                 (window as any).ethereum.on('chainChanged', (chainId: any) => {
                     window.location.reload();
@@ -61,7 +67,15 @@ const UnlockButton = () => {
                 });
                 return
             } catch (error) {
-                console.error(error)
+                toast({
+                    variant: 'left-accent',
+                    position: 'top-right',
+                    title: '',
+                    description: "An error to connect the metamask",
+                    status: 'error',
+                    duration: 9000,
+                    isClosable: true,
+                })
             }
         }
     }
