@@ -23,6 +23,12 @@ export const Container = styled.div`
                     .unit-row{
                         color: ${({ theme }) => theme.presale.presaleText} !important;
                     }
+                    .presale-link{
+                        color: ${({ theme }) => theme.presale.presaleTitle} !important;
+                        a{
+                            color: ${({ theme }) => theme.presale.presaleTitle} !important;
+                        }
+                    }
                 }
             }
         }

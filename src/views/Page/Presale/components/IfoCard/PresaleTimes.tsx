@@ -3,6 +3,7 @@ import { usePublicPresaleFLOKIContract } from 'hooks/useContract';
 import AnimatedNumbers from './AnimatedNumbers';
 import { useIceCreamMan } from 'hooks/useIceCreamMan';
 import { useTypedSelector } from 'hooks/useTypeSelector'
+import { convertTimestamp } from 'utils/flokiHelpers';
 
 
 const PresaleTimes = () => {
@@ -59,12 +60,12 @@ const PresaleTimes = () => {
             }
             {typeof (presaleTimestampSTART) == "undefined" ? '' : <div className="unit-row">
                 <div className="title"><span>Start Time: </span></div>
-                <div className='value'>{presaleTimestampSTART}</div>
+                <div className='value'>{convertTimestamp(presaleTimestampSTART)}</div>
             </div>
             }
             {typeof (presaleTimestampEND) == "undefined" ? '' : <div className="unit-row">
                 <div className="title"><span>Whitelist Only End Time:</span></div>
-                <div className='value'>{presaleTimestampEND}</div>
+                <div className='value'>{convertTimestamp(presaleTimestampEND)}</div>
             </div>
             }
             

@@ -31,7 +31,7 @@ const Header = ({ showSidebarButton = true, onShowSidebar }: Props) => {
       <Center flex="1" h="40px">
         <ButtonGroup spacing="2">
           {/* <TogglerButton /> */}
-          <Button className='headerAction' leftIcon={<FaInfoCircle />} size="md"  variant="solid" >FLOKIDAO</Button>
+          <Button className='headerAction' leftIcon={<FaInfoCircle />} size="md"  variant="solid" >FlokiDao</Button>
           <ConnectWallet/>
         </ButtonGroup>
       </Center>

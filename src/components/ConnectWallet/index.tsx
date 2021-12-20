@@ -7,7 +7,8 @@ import {
     ModalCloseButton,
     ModalBody,
     useDisclosure,
-    ModalFooter
+    ModalFooter,
+    useToast
 } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import Web3 from 'web3'
@@ -16,6 +17,7 @@ import { useDispatch } from 'react-redux';
 import { connectWallet } from 'redux/actionCreators';
 
 const ConnectWallet = () => {
+    const toast = useToast()
     const { isOpen, onOpen, onClose } = useDisclosure()
     const [currentAddr, setCurrentAddr] = useState("");
     const dispatch = useDispatch();
@@ -49,9 +51,13 @@ const ConnectWallet = () => {
                     ],
                 })
 
-                await (window as any).ethereum.request({ method: "eth_requestAccounts" });
-                let accounts = await (window as any).ethereum.request({ method: 'eth_accounts' })
+                await (window as any).ethereum.request({
+                    method: 'wallet_requestPermissions',
+                    params: [{ eth_accounts: {} }],
+                })
+                let accounts = await (window as any).ethereum.request({ method: 'eth_accounts', })
                 setCurrentAddr(accounts[0]);
+                localStorage.setItem('disconnected', 'false');
                 dispatch(connectWallet(accounts[0]));
                 (window as any).ethereum.on('chainChanged', (chainId: any) => {
                     window.location.reload();
@@ -61,7 +67,15 @@ const ConnectWallet = () => {
                 });
                 return
             } catch (error) {
-                console.error(error)
+                toast({
+                    variant: 'left-accent',
+                    position: 'top-right',
+                    title: '',
+                    description: "An error to connect the metamask",
+                    status: 'error',
+                    duration: 9000,
+                    isClosable: true,
+                })
             }
         }
     }
@@ -76,9 +90,14 @@ const ConnectWallet = () => {
         connectMetamask();
     }
 
+    const disconnectWalletPressed = async () => {
+        localStorage.setItem('disconnected', 'true');
+        window.location.reload();
+    }
+
     return (
         <>{
-            (currentAddr && currentAddr != "") && <Button size="md"variant="solid" className="headerAction">
+            (currentAddr && currentAddr != "") && <Button onClick={onOpen} size="md" variant="solid" className="headerAction">
                 {
                     String(currentAddr).substring(0, 6) +
                     "..." +
@@ -87,10 +106,24 @@ const ConnectWallet = () => {
             </Button>
         }
             {
-                (!currentAddr || currentAddr == "") && <Button onClick={connectWalletPressed} size="md"  variant="solid"  className="headerAction">
+                (!currentAddr || currentAddr == "") && <Button onClick={connectWalletPressed} size="md" variant="solid" className="headerAction">
                     Connect Wallet
                 </Button>
             }
+            <Modal size="sm" isOpen={isOpen} onClose={onClose} colorScheme="facebook">
+                <ModalOverlay />
+                <ModalContent className="contribute-modal">
+                    <ModalHeader>Disconnect Wallet</ModalHeader>
+                    <ModalCloseButton />
+                    <ModalBody pb={6}>
+                    </ModalBody>
+                    <ModalFooter>
+                        <Button onClick={() => disconnectWalletPressed()}>
+                            Disconnect
+                        </Button>
+                    </ModalFooter>
+                </ModalContent>
+            </Modal>
         </>
     );
 }

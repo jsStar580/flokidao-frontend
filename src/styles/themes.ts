@@ -55,7 +55,7 @@ export interface ThemeProps {
     togglecolor:'white',
     sidebarBack:'white',
     sidebarText:'#253449',
-    pageBackground:'linear-gradient(1deg, #fad3386b, transparent)',
+    pageBackground:'linear-gradient(1deg,#f3e9c16b,transparent)',
     dashboard:{
       cardBack:'white',
       cardText:'#253449'
@@ -65,7 +65,7 @@ export interface ThemeProps {
       actionText:'#253449'
     },
     presale:{
-      presaleBack:'linear-gradient(to top, #f7ea8a, #e7e7e7,#f7ea8a)',
+      presaleBack:'linear-gradient(to top,#ffffff,#e7e7e7,#fdf1c1)',
       presaleText:'#4e5a6b',
       presaleTitle:'#4e5a6b',
     }

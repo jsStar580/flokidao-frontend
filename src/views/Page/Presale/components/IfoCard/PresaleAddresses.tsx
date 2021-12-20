@@ -36,7 +36,7 @@ const PresaleAddresses = () => {
             <div className="unit-row" style={{ marginTop: '10px' }}>
                 <div className="title"><span>Presale:</span></div>
 
-                <Button variant="link" color="#fff" className="presale-link" rightIcon={<FaRegShareSquare />}>
+                <Button variant="link" className="presale-link" rightIcon={<FaRegShareSquare />}>
                     {presaleFLOKI == ZERO ? 'TBA' :
                         <a target="_blank" href={`https://testnet.bscscan.com/address/${presaleFLOKI}`} style={{ margin: 'auto' }}>
                             {presaleFLOKI}
@@ -46,7 +46,7 @@ const PresaleAddresses = () => {
             {wallet == iceCreamMan ? <>
                 <div className="unit-row" style={{ marginTop: '10px' }}>
                     <div className="title"><span>Token:</span></div>
-                    <Button variant="link" color="#fff" className="presale-link" rightIcon={<FaRegShareSquare />}>
+                    <Button variant="link" className="presale-link" rightIcon={<FaRegShareSquare />}>
                         <a target="_blank" href={`https://testnet.bscscan.com/address/${floki}`} style={{ margin: 'auto' }}>
                             {floki}
                         </a>
@@ -55,7 +55,7 @@ const PresaleAddresses = () => {
             </> :
                 <div className="unit-row" style={{ marginTop: '10px' }}>
                     <div className="title"><span>Token:</span></div>
-                    <Button variant="link" color="#fff" className="presale-link" rightIcon={floki == ZERO ? <></> : <FaRegShareSquare />}>
+                    <Button variant="link"  className="presale-link" rightIcon={floki == ZERO ? <></> : <FaRegShareSquare />}>
                         {floki == ZERO ? 'TBA' :
                             <a target="_blank" href={`https://testnet.bscscan.com/address/${floki}`} style={{ margin: 'auto' }}>
                                 {floki}
@@ -67,7 +67,7 @@ const PresaleAddresses = () => {
                 wallet == iceCreamMan ? <>
                     <div className="unit-row" style={{ marginTop: '10px' }}>
                         <div className="title"><span>Creamery:</span></div>
-                        <Button variant="link" color="#fff" className="presale-link" rightIcon={<FaRegShareSquare />}>
+                        <Button variant="link"  className="presale-link" rightIcon={<FaRegShareSquare />}>
                             <a target="_blank" href={`https://testnet.bscscan.com/address/${creamery}`} style={{ margin: 'auto' }}>
                                 {creamery}
                             </a>
@@ -76,7 +76,7 @@ const PresaleAddresses = () => {
                     <div className="unit-row" style={{ marginTop: '10px' }}>
                         <div className="title"><span>Ice Cream Man:</span></div>
 
-                        <Button variant="link" color="#fff" className="presale-link" rightIcon={<FaRegShareSquare />}>
+                        <Button variant="link"  className="presale-link" rightIcon={<FaRegShareSquare />}>
                             <a target="_blank" href={`https://testnet.bscscan.com/address/${iceCreamMan}`} style={{ margin: 'auto' }}>
                                 {iceCreamMan}
                             </a>
@@ -85,7 +85,7 @@ const PresaleAddresses = () => {
                     <div className="unit-row" style={{ marginTop: '10px' }}>
                         <div className="title"><span>Pending Ice Cream Man:</span></div>
 
-                        <Button variant="link" color="#fff" className="presale-link" rightIcon={<FaRegShareSquare />}>
+                        <Button variant="link"  className="presale-link" rightIcon={<FaRegShareSquare />}>
                             <a target="_blank" href={`https://testnet.bscscan.com/address/${pendingICM}`} style={{ margin: 'auto' }}>
                                 {pendingICM}
                             </a>

@@ -113,7 +113,7 @@ export default function Presale() {
                     <div className="presale-container">
                         <div className="presale-header">
                             <span className="title">
-                                FLOK Presale
+                                Floki Presale
                             </span>
                             <span className="description">
                                 Scoop up access to a flavorful variety of vetted

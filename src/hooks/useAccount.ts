@@ -20,7 +20,9 @@ const useAccount = () => {
                     setAccount(addr[0]);
                 });
         };
-        checkConnection();
+        if(localStorage.getItem('disconnected')!='true'){
+            checkConnection();
+        }
     }, []);
 
     return { account }

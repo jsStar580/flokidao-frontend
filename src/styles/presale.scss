@@ -69,12 +69,12 @@
                 font-family: -webkit-pictograph;
                 text-align: left;
                 .title{
-                    width:calc(100% - 100px);
+                    width:calc(100% - 200px);
                     display: inline-block;
                     text-align: left;
                 }
                 .value{
-                    width:100px;
+                    width:200px;
                     display: inline-block;
                     text-align: right;
                 }
@@ -97,12 +97,12 @@
                     font-family: -webkit-pictograph;
                     text-align: left;
                     .title{
-                        width:calc(100% - 100px);
+                        width:calc(100% - 200px);
                         display: inline-block;
                         text-align: left;
                     }
                     .value{
-                        width:100px;
+                        width:200px;
                         display: inline-block;
                         text-align: right;
                     }
