@@ -55,7 +55,7 @@ const PresaleMyDetails = () => {
                 typeof (holdersClaimableFLV) == "undefined" ? '' : <div className="unit-row">
                     <div className="title"><span>Purchased:</span></div>
                     <div className="value"><span>
-                        <AnimatedNumbers decimals={0} value={holdersClaimableFLV / 1e9} suffix={' NFOHM'} />
+                        <AnimatedNumbers decimals={0} value={holdersClaimableFLV / 1e9} suffix={' FORK'} />
                     </span></div>
                 </div>
             }
@@ -63,7 +63,7 @@ const PresaleMyDetails = () => {
                 typeof (claimedFLV) == "undefined" ? '' : <div className="unit-row">
                     <div className="title"><span>Claimed:</span></div>
                     <div className="value"><span>
-                        <AnimatedNumbers decimals={0} value={claimedFLV / 1e9} suffix={' NFOHM'} />
+                        <AnimatedNumbers decimals={0} value={claimedFLV / 1e9} suffix={' FORK'} />
                     </span></div>
                 </div>
             }

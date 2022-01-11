@@ -1,2 +1,4 @@
-export const newDaoContractAddress = "0x756fDAf7feC5c4f592cc7F6A7EB8Ef53c52Ba208";
-export const presaleContractAddress = "0xDD4F7ef555695deAf142B561718d48060A2aB991";
+export const newDaoContractAddress = "0x54Ff3fb9de6B0a6765E58dDf58755af65F7e370E";
+export const presaleContractAddress = "0xb0bbd7C2c6dBD82A0ad9971c97378cd7b04f79f9";
+export const sForkContractAddress = "0xB3e8e65c2551D927c85638cBa240057dDd6f983F";
+export const stackingContractAddress = "0xfb19eC4eF6da060EA46582CfE36DaA62F86Ddc9f";

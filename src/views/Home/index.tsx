@@ -3,8 +3,19 @@ import { Link } from 'react-router-dom';
 import {  FaTelegram, FaTwitter, FaMedium } from 'react-icons/fa';
 
 import * as S from './styles';
+import { useEffect } from 'react';
 
 export default function Home() {
+
+
+    useEffect(()=>{
+        // const headers = { 'Content-Type': 'application/json','X-CMC_PRO_API_KEY':'74b45c73-d6a3-4807-9b51-203d974ad3cb' }
+        // fetch('https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest', { headers })
+        //     .then(response => response.json())
+        //     .then(data => {
+        //         console.log(data);
+        //     });
+    })
 
     return (
         <S.Container>

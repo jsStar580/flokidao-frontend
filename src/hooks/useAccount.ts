@@ -3,6 +3,7 @@ import Web3 from "web3";
 
 const useAccount = () => {
     const [account, setAccount] = useState("");
+    
     useEffect(() => {
         const checkConnection = async () => {
 

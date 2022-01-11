@@ -64,7 +64,8 @@ export default function Presale() {
 
     const confirmPressed = async () => {
         try {
-            await publicPresaleContract.methods.contribute().send({ value: 0.01 * 1e18, from: wallet, gas: 200000 });
+            
+            await publicPresaleContract.methods.contribute().send({ value: contributeValue * 1e18, from: wallet, gas: 200000 });
             toast({
                 variant: 'left-accent',
                 position: 'top-right',
@@ -104,7 +105,24 @@ export default function Presale() {
         return presaleSTART
     }
 
+    const useCountdownToPresaleEND = (contract: any) => {
+        // GETS DATA AFTER 1 SECOND DELAY
+        const [state, setCountdownToPresaleEND] = useState([]);
+        useEffect(() => {
+            const interval = setTimeout(async () => {
+                const _state = await contract.methods.getTimes().call()
+                setCountdownToPresaleEND(_state)
+                //console.log(_state)
+            }, 1000)
+            return () => clearInterval(interval)
+        }, [contract])
+        // GETS DATA AFTER 1 SECOND DELAY
+        const presaleEND = state[5]
+        return presaleEND
+    }
+
     const countdownToPresale = useCountdownToPresaleSTART(publicPresaleContract)
+    const countdownToEnd = useCountdownToPresaleEND(publicPresaleContract)
 
     return (
         <S.Container>
@@ -133,12 +151,16 @@ export default function Presale() {
                                     {
                                         countdownToPresale <= 0 ? (
                                             <>
-                                                {/* <Button colorScheme="blue" disabled bgColor="gray" variant="subtle" width="100%">
-                                                ❗️SOLD OUT❗️
-                                            </Button> */}
-                                                <Button mb={5} width={'60%'} className="presale-action" onClick={onOpen}>
-                                                    Contribute NFOHM
-                                                </Button>
+                                                {
+                                                    countdownToEnd <= 0 ? (
+                                                        <Button colorScheme="blue" disabled bgColor="gray" variant="subtle" width="100%">
+                                                            ❗️SOLD OUT❗️
+                                                        </Button>
+                                                    ) :
+                                                        <Button mb={5} width={'60%'} className="presale-action" onClick={onOpen}>
+                                                            Contribute FORK
+                                                        </Button>
+                                                }
                                             </>
                                         ) :
                                             <Button disabled variant="solid" width="100%">
@@ -252,7 +274,7 @@ export default function Presale() {
                                 </div>
                                 <div className="contribute-item">
                                     <span>Rate: </span>
-                                    <span><AnimatedNumbers decimals={0} value={nativePerBNB / 1e9} suffix={''} /> NFOHM per BNB </span>
+                                    <span><AnimatedNumbers decimals={0} value={nativePerBNB / 1e9} suffix={''} /> FORK per BNB </span>
                                 </div>
                                 <InputGroup size='lg'>
                                     <Input
@@ -286,7 +308,7 @@ export default function Presale() {
                                 </div>
                                 <div className="contribute-item" style={{ marginTop: '15px' }}>
                                     <span>You will be able to claim:&nbsp;</span>
-                                    <span><AnimatedNumbers decimals={0} value={contributeValue * nativePerBNB / 1e9} suffix={' NFOHM'} /></span>
+                                    <span><AnimatedNumbers decimals={0} value={contributeValue * nativePerBNB / 1e9} suffix={' FORK'} /></span>
                                 </div>
                             </div>
                         </ModalBody>

@@ -4,6 +4,7 @@ import AnimatedNumbers from './AnimatedNumbers'
 import { useCountdownToPresaleSTART } from 'hooks/useCountdownToPresaleSTART';
 import { useIceCreamMan } from 'hooks/useIceCreamMan';
 import { useTypedSelector } from 'hooks/useTypeSelector'
+import { Progress } from '@chakra-ui/react';
 
 
 const PresaleInfo = () => {
@@ -52,15 +53,15 @@ const PresaleInfo = () => {
 
     return (
         <>
-            {/* {presaleSTART > 0 ? '' :
+            {presaleSTART > 0 ? '' :
                 <h1>Progress</h1>
             }
 
             {presaleSTART > 0 ? '' :
                 <div style={{marginBottom:'10px'}}>
-                    <Progress variant="round" primaryStep={progress} />
+                    <Progress variant="round" value={progress} />
                 </div>
-            } */}
+            }
             {typeof (globalTotal_contributions) == "undefined" ? '' : <div className="unit-row">
                 <div className="title"><span>Total Contributions:</span></div>
                 <div className='value'>
@@ -76,7 +77,7 @@ const PresaleInfo = () => {
             </div>
             }
             {typeof (flokiPerNativeCoin) == "undefined" ? '' : <div className="unit-row">
-                <div className="title"><span>NFOHM per BNB:</span></div>
+                <div className="title"><span>FORK per BNB:</span></div>
                 <div className='value'>
                     <AnimatedNumbers decimals={0} value={flokiPerNativeCoin / 1e9} suffix={''} />
                 </div>
@@ -84,9 +85,9 @@ const PresaleInfo = () => {
             }
             {wallet !== iceCreamMan ? '' : <>
                 {typeof (globalTotal_claims) == "undefined" ? '' : <div className="unit-row">
-                    <div className="title"><span>Total FLV Claimed:</span></div>
+                    <div className="title"><span>Total FORK Claimed:</span></div>
                     <div className='value'>
-                        <AnimatedNumbers decimals={0} value={globalTotal_claims / 1e9} suffix={' FLV'} />
+                        <AnimatedNumbers decimals={0} value={globalTotal_claims / 1e9} suffix={' FORK'} />
                     </div>
                 </div>
                 }
