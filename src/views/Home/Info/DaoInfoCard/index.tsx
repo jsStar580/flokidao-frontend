@@ -5,7 +5,7 @@ import {  FaTelegram, FaTwitter, FaMedium } from 'react-icons/fa';
 import * as S from './styles';
 import { useEffect } from 'react';
 
-export default function BannerInfoCard(props:any) {
+export default function DaoInfoCard(props:any) {
 
 
     useEffect(()=>{
@@ -14,13 +14,10 @@ export default function BannerInfoCard(props:any) {
 
     return (
         <S.Container>
-             <div className="BannerInfoCard">
-                 <img src='Images/Home/Banner/bone.png' />
-                 <div className='info-body'>
-                    <span>{props.title}</span>
-                    <span>{props.value}</span>
-                 </div>
-                
+            <div className="DaoInfoCard">
+                <span className='DaoInfoCat'>{props.cat}</span>
+                <span className='DaoInfoTitle'>{props.title}</span>
+                <span className='DaoInfoDescription'>{props.description}</span>
             </div>
         </S.Container>
     )

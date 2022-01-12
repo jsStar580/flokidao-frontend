@@ -67,7 +67,7 @@ export default function SideBar(props: any) {
 
       >
         <div className="sidebar-logo">
-          <img src='Images/Logo/logo1.png' alt="logo" style={{ width: '60%' }} />
+          <Link to="/"><img src='Images/Logo/logo1.png' alt="logo" style={{ width: '60%' }} /></Link>
           <span>Floki Dao</span>
           {(wallet && wallet != "") && <small>
             {String(wallet).substring(0, 6) +
@@ -94,7 +94,7 @@ export default function SideBar(props: any) {
         <DrawerContent bgColor="#496193">
           <DrawerCloseButton onClick={() => { props.onClose() }} />
           <DrawerHeader>
-            <img src='Images/Logo/logo.png' alt="logo" style={{ height: '50px' }} /><br />
+          <Link to="/"><img src='Images/Logo/logo.png' alt="logo" style={{ height: '50px' }} /><br /></Link>
             {(wallet && wallet != "") && <small>
               {String(wallet).substring(0, 6) +
                 "..." +

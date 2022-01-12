@@ -37,10 +37,10 @@ export default function Banner() {
                         <Button size="lg" className='active' pl={10} pr={10} rightIcon={<FaMedium />}>Docs</Button>
                     </div>
                     <div className='right-part info-card'>
-                        <BannerInfoCard />
-                        <BannerInfoCard />
-                        <BannerInfoCard />
-                        <BannerInfoCard />
+                        <BannerInfoCard title="Annual Percentage Yield" value="-" />
+                        <BannerInfoCard title="Treasury Balance" value="-"/>
+                        <BannerInfoCard title="Market Capitalization" value="-"/>
+                        <BannerInfoCard title="Total Value Locked" value="-"/>
                     </div>
                 </div>
             </div>

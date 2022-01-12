@@ -9,6 +9,7 @@ import Info from './Info';
 import Feature from './Feature';
 import Distribution from './Distribution';
 import Header from './Header';
+import JoinDiscord from './JoinDiscord';
 
 export default function Home() {
 
@@ -24,6 +25,7 @@ export default function Home() {
                 <Info />
                 <Feature />
                 <Distribution />
+                <JoinDiscord />
             </div>
         </S.Container>
     )

@@ -3,12 +3,57 @@
 .home {
     background-color: #fff;
     width: 100%;
+    .Header {
+        z-index: 1;
+        width: 100%;
+        min-height: 8em;
+        background-color: transparent;
+        position: fixed;
+        top: 0;
+        padding: 0 75px 0 75px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        .name {
+            font-size: 52pt;
+            color: #192748;
+        }
+        .right-bar {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            .social-buttons {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                a {
+                    margin-right: 10px;
+                }
+                margin-right: 20px;
+            }
+            .action-buttons {
+                .active {
+                    background-color: #f2b42a;
+                    color: #192748;
+                }
+                .deactive {
+                    background-color: #fff;
+                    color: #6c757d;
+                }
+            }
+        }
+    }
+    .Header.solid {
+        background-color: #ffffffdb;
+    }
     .Banner {
         background-color: #f9efe4;
         background-image: url("Images/Home/Banner/Bg.png");
         background-size: 100%;
         width: 100%;
-        padding: 10em 1em 2em 5em;
+        padding: 9em 1em 1em 16em;
         .section {
             width: 100%;
             display: flex;
@@ -33,57 +78,292 @@
             }
             .right-part {
                 display: flex;
-                justify-content: flex-start;
+                justify-content: center;
                 align-items: flex-start;
                 flex-wrap: wrap;
                 padding: 10px;
-                max-width: 800px;
+                max-width: 1000px;
             }
         }
     }
     .Info {
         background-color: #fff;
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0em 16em 5em 16em;
     }
     .Feature {
-        background-color: blue;
-    }
-    .Distribution {
-        background-color: blue;
-    }
-    .Header {
-        width: 100%;
-        height: 8em;
-        background-color: transparent;
-        position: fixed;
-        top: 0;
-        padding: 0 75px 0 75px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        .name {
-            font-size: 52pt;
-            color: #192748;
-        }
-        .right-bar {
+        background-color: #faf3ea;
+        background-image: url("Images/Home/Features/Rectangle_shape.png");
+        background-size: cover;
+        margin: 2em 16em 2em 16em;
+        border-radius: 30px;
+        padding: 7em 7em 7em 7em;
+        .feature-intro {
             display: flex;
-            align-items: center;
-            justify-content: space-between;
-            .social-buttons {
+            flex-wrap: wrap;
+            .title {
+                width: 50%;
+                font-size: 30pt;
+                color: #192748;
+                padding: 0 1em;
+            }
+            .body {
+                width: 50%;
+            }
+        }
+        .feature-card {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            margin-top: 5em;
+            .FeatureCard {
+                width: 350px;
+                height: 350px;
+                background-color: #192748;
+                border-radius: 20px;
                 display: flex;
+                flex-wrap: wrap;
+                flex-direction: column;
                 align-items: center;
-                justify-content: space-between;
-                a {
-                    margin-left: 10px;
+                justify-content: space-evenly;
+                padding: 40px 0 40px 0;
+                .icon {
+                    width: 80px;
+                }
+                .title {
+                    color: #d5d7dd;
+                    font-size: 20pt;
+                    text-align: center;
+                }
+                .description {
+                    color: #d5d7dd;
+                    text-align: center;
                 }
             }
-            .action-buttons {
-                .active {
-                    background-color: #f2b42a;
-                    color: #192748;
+            .FeatureCard.TreasuryCard {
+                background-image: url("Images/Home/Features/Shape_center_small.png");
+                background-size: cover;
+            }
+        }
+    }
+    .Distribution {
+        background-color: #fff;
+        margin: 2em 16em 2em 16em;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        .header {
+            width: 40%;
+            font-size: 52pt;
+            color: #192748;
+            padding: 0 1em;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .body {
+            width: 60%;
+        }
+    }
+    .JoinDiscord {
+        background-color: #192748;
+        background-image: url("Images/Home/Distribution/Shape.png");
+        background-size: cover;
+        margin: 2em 16em 2em 16em;
+        display: flex;
+        flex-direction: column;
+        border-radius: 10px;
+        height: 430px;
+        justify-content: center;
+        align-items: center;
+        .title {
+            font-size: 28pt;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+    }
+    @media (max-width:1280px) {
+        .Banner {
+            padding-left: 100px;
+            padding-right: 100px;
+            .section {
+                justify-content: center;
+            }
+        }
+        .Info {
+            margin: 30px 100px 30px 100px;
+        }
+        .Feature {
+            margin: 30px 100px 30px 100px;
+            .feature-card {
+                margin-top: 20px;
+                .FeatureCard {
+                    margin-top: 30px;
                 }
-                .deactive {
-                    background-color: #fff;
-                    color: #6c757d;
+            }
+        }
+        .Distribution,
+        .JoinDiscord {
+            margin: 30px 100px 30px 100px;
+        }
+    }
+    @media (max-width:1024px) {
+        .Feature {
+            margin: 30px 50px 30px 50px;
+            padding: 30px;
+            .feature-intro {
+                .title {
+                    width: 100%;
+                    padding: 0px;
+                }
+                .body {
+                    width: 100%;
+                }
+            }
+        }
+        .Info,
+        .Distribution,
+        .JoinDiscord {
+            margin: 30px 50px 30px 50px;
+        }
+        .Distribution {
+            .header {
+                width: 100%;
+                padding: 0px;
+                font-size: 40pt;
+                text-align: center;
+                display: flex;
+                align-items: center;
+            }
+            .body {
+                width: 100%;
+            }
+        }
+    }
+    @media (max-width:768px) {
+        .Header {
+            padding: 0 5px 10px 5px;
+            justify-content: center;
+            .right-bar {
+                .social-buttons {
+                    a {
+                        img {
+                            width: 30px;
+                        }
+                    }
+                    margin-right: 5px;
+                }
+            }
+        }
+        .Banner {
+            padding-left: 30px;
+            padding-right: 30px;
+            .section {
+                justify-content: center;
+                .left-part {
+                    .title_text {
+                        font-size: 30pt;
+                    }
+                }
+            }
+        }
+        .Info {
+            margin: 30px 30px 30px 30px;
+        }
+        .Feature {
+            margin: 30px 30px 30px 30px;
+            padding: 30px;
+            .feature-intro {
+                .title {
+                    width: 100%;
+                    padding: 0px;
+                }
+                .body {
+                    width: 100%;
+                }
+            }
+            .feature-card {
+                margin-top: 1em;
+                .FeatureCard {
+                    margin-top: 10px;
+                }
+            }
+        }
+        .Distribution {
+            margin: 30px 30px 30px 30px;
+            .header {
+                width: 100%;
+                padding: 0px;
+                font-size: 30pt;
+                text-align: center;
+                display: flex;
+                align-items: center;
+            }
+            .body {
+                width: 100%;
+            }
+        }
+        .JoinDiscord {
+            margin: 30px 30px 30px 30px;
+            height: 250px;
+            .title {
+                font-size: 20pt;
+                padding: 0 10px 0 10px;
+                text-align: center;
+            }
+        }
+    }
+    @media (max-width:280px) {
+        .Header {
+            justify-content: center;
+            .name {
+                font-size: 30pt;
+            }
+            .right-bar {
+                justify-content: center;
+                .social-buttons {
+                    a {
+                        img {
+                            width: 20px;
+                        }
+                    }
+                    margin-right: 5px;
+                }
+                .action-buttons {
+                    button {
+                        margin-top: 10px;
+                        font-size: 9pt;
+                    }
+                }
+            }
+        }
+        .Banner {
+            .section {
+                .left-part {
+                    .title_text {
+                        font-size: 16pt;
+                    }
+                    .description_text {
+                        font-size: 13pt;
+                    }
+                }
+            }
+        }
+        .Feature {
+            .feature-intro {
+                .title {
+                    font-size: 16pt;
+                }
+                .body {
+                    font-size: 10pt;
+                }
+            }
+            .feature-card {
+                .FeatureCard {
+                    .description {
+                        font-size: 10pt;
+                    }
                 }
             }
         }

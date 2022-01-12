@@ -3,18 +3,27 @@ import { Link } from 'react-router-dom';
 import { FaTelegram, FaTwitter, FaMedium } from 'react-icons/fa';
 
 import * as S from './styles';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function Header() {
 
+    const [scrollState, setScrollState] =useState(false);
 
     useEffect(() => {
-
+        document.addEventListener('scroll',(e:Event)=>{
+            const state = document.scrollingElement?.scrollTop?document.scrollingElement?.scrollTop:0;
+            if(state>50){
+                setScrollState(true)
+            }else{
+                setScrollState(false)
+            }
+            console.log(scrollState);
+        })
     })
 
     return (
         <S.Container>
-            <div className="Header">
+            <div className={scrollState?`Header solid`:`Header`}>
                 <span className='name'>FlokiDao</span>
                 <div className='right-bar'>
                     <div className='social-buttons'>
@@ -32,9 +41,9 @@ export default function Header() {
                         </a>
                     </div>
                     <div className='action-buttons'>
-                        <ButtonGroup spacing={3} ml={8}>
-                            <Button className='deactive' size="lg">DAPP</Button>
-                            <Button className='active' size="lg">PRESALE</Button>
+                        <ButtonGroup spacing={2}>
+                            <Link to="/dashboard"><Button className='deactive'>DAPP</Button></Link>
+                            <Link to="/presale"><Button className='active'>PRESALE</Button></Link>
                         </ButtonGroup>
 
                     </div>

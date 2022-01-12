@@ -28,9 +28,9 @@ export interface ThemeProps {
     text: 'white',
     toggleback:'#b997ff',
     togglecolor:'white',
-    sidebarBack:'#354255eb',
+    sidebarBack:'#192748',
     sidebarText:'white',
-    pageBackground:'#1a2230fa',
+    pageBackground:'#f4f2ed',
     dashboard:{
       cardBack:'#253449',
       cardText:'white'
@@ -55,7 +55,7 @@ export interface ThemeProps {
     togglecolor:'white',
     sidebarBack:'white',
     sidebarText:'#253449',
-    pageBackground:'linear-gradient(1deg,#f3e9c16b,transparent)',
+    pageBackground:'#f4f2ed',
     dashboard:{
       cardBack:'white',
       cardText:'#253449'
