@@ -27,7 +27,7 @@ export default function Page() {
           isOpen={isSidebarOpen}
           onClose={toggleSidebar}
         />
-        <Box ml={!variants?.navigationButton ? 200 : 0}>
+        <Box ml={!variants?.navigationButton ? 280 : 0}>
           <Header
             showSidebarButton={variants?.navigationButton}
             onShowSidebar={toggleSidebar}

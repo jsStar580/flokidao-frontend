@@ -30,7 +30,7 @@ const Header = ({ showSidebarButton = true, onShowSidebar }: Props) => {
   })
   return (
     <S.Container  className={scrollState?`Header solid`:`Header`}>
-      <Flex bg="transparent" p={4} color="white" justifyContent="center">
+      <Flex bg="transparent" p={4} color="white" justifyContent="center" className={showSidebarButton?'':'Header-Flex'}>
         <Box flex="1">
           {showSidebarButton && (
             <IconButton
