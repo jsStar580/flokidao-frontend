@@ -17,5 +17,3 @@ export const useFLOKIPerNativeCoin = (contract: any) => {
   const flokiPerNativeCoin =  state[5]
   return flokiPerNativeCoin
 }
-
-

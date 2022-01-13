@@ -52,7 +52,6 @@ function App() {
   useEffect(() => {
     if (account) {
       console.log(wallet);
-      console.log('wallet---'+wallet);
       dispatch(connectWallet(account));
 
     }

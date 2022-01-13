@@ -21,7 +21,7 @@ import {
     InputRightElement
 } from "@chakra-ui/react";
 import { FaRegShareSquare } from 'react-icons/fa';
-import PresaleAddresses from "./components/IfoCard/PresaleAddresses";
+import PresaleAddresses, { ZERO } from "./components/IfoCard/PresaleAddresses";
 import PresaleInfo from "./components/IfoCard/PresaleInfo";
 import PresaleLimits from "./components/IfoCard/PresaleLimits";
 import PresaleMyDetails from "./components/IfoCard/PresaleMyDetails";
@@ -34,10 +34,11 @@ import { useEffect, useState } from "react";
 import UnlockButton from "components/UnlockButton";
 import useBalanceBNB from "hooks/useBalanceBNB";
 import AnimatedNumbers from "./components/IfoCard/AnimatedNumbers";
-import { useFLOKIPerNativeCoin } from "hooks/usePresaleTokensPerBNB";
+import { useFLOKIPerNativeCoin } from "hooks/usePresaleInfo";
 import { useMaxContribution, useMinContribution } from "hooks/usePresaleLimits";
 
 import * as S from './styles';
+import { useClaimableFLOK } from "hooks/useclaimableFLOK";
 
 
 export default function Presale() {
@@ -49,7 +50,8 @@ export default function Presale() {
     const balanceBNB = useBalanceBNB();
     const nativePerBNB = useFLOKIPerNativeCoin(publicPresaleContract);
     const maxContributeBNB = useMaxContribution(publicPresaleContract);
-    const minContributeBNB = useMinContribution(publicPresaleContract);
+    const minContributeBNB = useMinContribution(publicPresaleContract)
+    const claimableFLOK = useClaimableFLOK(publicPresaleContract,(typeof (wallet) != "undefined" && wallet != "") ? wallet : ZERO);
 
     const [contributeValue, setContibuteValue] = useState(0);
 
@@ -71,6 +73,33 @@ export default function Presale() {
                 position: 'top-right',
                 title: '',
                 description: "successfully contributed to Presale",
+                status: 'success',
+                duration: 9000,
+                isClosable: true,
+            })
+        } catch (err) {
+            toast({
+                variant: 'left-accent',
+                position: 'top-right',
+                title: '',
+                description: "An error occurred confirming transaction",
+                status: 'error',
+                duration: 9000,
+                isClosable: true,
+            })
+        }
+    }
+
+    const claimPressed = async () => {
+        console.log("claim");
+        try {
+            
+            await publicPresaleContract.methods.claim_OWL().send({from: wallet, gas: 200000});
+            toast({
+                variant: 'left-accent',
+                position: 'top-right',
+                title: '',
+                description: "successfully claimed",
                 status: 'success',
                 duration: 9000,
                 isClosable: true,
@@ -123,7 +152,7 @@ export default function Presale() {
 
     const countdownToPresale = useCountdownToPresaleSTART(publicPresaleContract)
     const countdownToEnd = useCountdownToPresaleEND(publicPresaleContract)
-
+    
     return (
         <S.Container>
             <div className="presale">
@@ -157,9 +186,16 @@ export default function Presale() {
                                                             ❗️SOLD OUT❗️
                                                         </Button>
                                                     ) :
-                                                        <Button mb={5} width={'60%'} className="presale-action" onClick={onOpen}>
+                                                        <Button mt={3} mb={5} width={'60%'} className="presale-action" onClick={onOpen}>
                                                             Contribute FLOK
                                                         </Button>
+                                                }
+                                                {
+                                                    claimableFLOK > 0?(
+                                                        <Button  mt={3} mb={5} width={'60%'} className="presale-action" onClick={()=>claimPressed()}>
+                                                            Claim FLOK
+                                                        </Button>
+                                                    ):''
                                                 }
                                             </>
                                         ) :

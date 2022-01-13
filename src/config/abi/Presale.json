@@ -160,12 +160,12 @@
         "name": "getAddresses",
         "outputs": [{
                 "internalType": "address",
-                "name": "presaleFORK",
+                "name": "presaleFLOK",
                 "type": "address"
             },
             {
                 "internalType": "address",
-                "name": "fork",
+                "name": "flok",
                 "type": "address"
             },
             {
@@ -201,7 +201,7 @@
             },
             {
                 "internalType": "uint256",
-                "name": "holdersClaimableFORK",
+                "name": "holdersClaimableFLOK",
                 "type": "uint256"
             },
             {
@@ -211,7 +211,7 @@
             },
             {
                 "internalType": "uint256",
-                "name": "claimedFORK_",
+                "name": "claimedFLOK_",
                 "type": "uint256"
             },
             {
@@ -263,7 +263,7 @@
             },
             {
                 "internalType": "uint256",
-                "name": "forkPerNativeCoin_",
+                "name": "flokPerNativeCoin_",
                 "type": "uint256"
             },
             {
@@ -322,7 +322,7 @@
             },
             {
                 "internalType": "uint256",
-                "name": "holdersClaimableFORK",
+                "name": "holdersClaimableFLOK",
                 "type": "uint256"
             },
             {
@@ -332,7 +332,7 @@
             },
             {
                 "internalType": "uint256",
-                "name": "claimedFORK_",
+                "name": "claimedFLOK_",
                 "type": "uint256"
             },
             {
@@ -484,7 +484,7 @@
     {
         "inputs": [{
                 "internalType": "address",
-                "name": "fork",
+                "name": "flok",
                 "type": "address"
             },
             {
@@ -571,7 +571,7 @@
             },
             {
                 "internalType": "uint256",
-                "name": "claimedFORK_",
+                "name": "claimedFLOK_",
                 "type": "uint256"
             },
             {
@@ -626,7 +626,7 @@
     {
         "inputs": [{
             "internalType": "uint256",
-            "name": "forkPerNativeCoin_",
+            "name": "flokPerNativeCoin_",
             "type": "uint256"
         }],
         "name": "setRate_OICM",

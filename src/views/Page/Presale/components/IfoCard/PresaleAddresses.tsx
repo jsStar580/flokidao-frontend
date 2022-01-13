@@ -30,6 +30,8 @@ const PresaleAddresses = () => {
     const iceCreamMan = addresses[3]
     const pendingICM = addresses[4]
 
+    // console.log(iceCreamMan+'-'+wallet);
+
     return (
 
         <>
@@ -40,9 +42,11 @@ const PresaleAddresses = () => {
                     <Button variant="link" className="presale-link">
                         TBA
                     </Button> :
-                    <Button variant="link" className="presale-link" rightIcon={<FaRegShareSquare />}>
-                        {presaleFLOKI}
-                    </Button>
+                    <a target="_blank" href={`https://testnet.bscscan.com/address/${presaleFLOKI}`} style={{ margin: 'auto' }}>
+                        <Button variant="link" className="presale-link" rightIcon={<FaRegShareSquare />}>
+                            {presaleFLOKI}
+                        </Button>
+                    </a>
                 }
             </div>
             {wallet == iceCreamMan ? <>

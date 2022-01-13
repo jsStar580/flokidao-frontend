@@ -1,8 +1,8 @@
 import { useMemo } from 'react'
 
 import { newDaoContractAddress, presaleContractAddress } from 'config/contracts'
-import presale_ABI from 'config/abi/Presal.json';
-import token_ABI from 'config/abi/FLOKI.json';
+import presale_ABI from 'config/abi/Presale.json';
+import token_ABI from 'config/abi/FLOK.json';
 import Web3 from 'web3';
 import { AbiItem } from 'web3-utils';
 

@@ -7,8 +7,8 @@ import {
     presaleContractAddress
 } from "config/contracts"
 
-import newDaoContract_ABI from 'config/abi/FLOKI.json';
-import persaleFLOKI_ABI from 'config/abi/Presal.json';
+import newDaoContract_ABI from 'config/abi/FLOK.json';
+import persaleFLOKI_ABI from 'config/abi/Presale.json';
 
 
 const getContract = (abi: any, address: string, web3?: Web3) => {
