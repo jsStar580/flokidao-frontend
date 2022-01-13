@@ -5,6 +5,13 @@
     justify-content: space-between;
 }
 
+.sidebar-mini {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 30px !important;
+}
+
 .sidebar-logo {
     color: #fcac05;
     display: flex;
@@ -19,7 +26,9 @@
     }
     small {
         color: #fff;
-        font-size: 15px;
+        font-size: 13px;
+        text-shadow: none;
+        font-weight: 100;
     }
 }
 
@@ -35,7 +44,7 @@
 .sidebar-link {
     line-height: 30px !important;
     width: 150px;
-    color: #FAD338 !important;
+    color: #fff !important;
     font-weight: normal !important;
     font-size: 22px !important;
 }

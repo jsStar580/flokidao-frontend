@@ -36,60 +36,62 @@ const PresaleAddresses = () => {
             <div className="unit-row" style={{ marginTop: '10px' }}>
                 <div className="title"><span>Presale:</span></div>
 
-                <Button variant="link" className="presale-link" rightIcon={<FaRegShareSquare />}>
-                    {presaleFLOKI == ZERO ? 'TBA' :
-                        <a target="_blank" href={`https://testnet.bscscan.com/address/${presaleFLOKI}`} style={{ margin: 'auto' }}>
-                            {presaleFLOKI}
-                        </a>
-                    }</Button>
+                {presaleFLOKI == ZERO ?
+                    <Button variant="link" className="presale-link">
+                        TBA
+                    </Button> :
+                    <Button variant="link" className="presale-link" rightIcon={<FaRegShareSquare />}>
+                        {presaleFLOKI}
+                    </Button>
+                }
             </div>
             {wallet == iceCreamMan ? <>
                 <div className="unit-row" style={{ marginTop: '10px' }}>
                     <div className="title"><span>Token:</span></div>
-                    <Button variant="link" className="presale-link" rightIcon={<FaRegShareSquare />}>
-                        <a target="_blank" href={`https://testnet.bscscan.com/address/${floki}`} style={{ margin: 'auto' }}>
+                    <a target="_blank" href={`https://testnet.bscscan.com/address/${floki}`} style={{ margin: 'auto' }}>
+                        <Button variant="link" className="presale-link" rightIcon={<FaRegShareSquare />}>
                             {floki}
-                        </a>
-                    </Button>
+                        </Button>
+                    </a>
                 </div>
             </> :
                 <div className="unit-row" style={{ marginTop: '10px' }}>
                     <div className="title"><span>Token:</span></div>
-                    <Button variant="link"  className="presale-link" rightIcon={floki == ZERO ? <></> : <FaRegShareSquare />}>
-                        {floki == ZERO ? 'TBA' :
-                            <a target="_blank" href={`https://testnet.bscscan.com/address/${floki}`} style={{ margin: 'auto' }}>
+                    {floki == ZERO ? 'TBA' :
+                        <a target="_blank" href={`https://testnet.bscscan.com/address/${floki}`} style={{ margin: 'auto' }}>
+                            <Button variant="link" className="presale-link" rightIcon={floki == ZERO ? <></> : <FaRegShareSquare />}>
                                 {floki}
-                            </a>
-                        }</Button>
+                            </Button>
+                        </a>
+
+                    }
                 </div>
             }
             {
                 wallet == iceCreamMan ? <>
                     <div className="unit-row" style={{ marginTop: '10px' }}>
                         <div className="title"><span>Creamery:</span></div>
-                        <Button variant="link"  className="presale-link" rightIcon={<FaRegShareSquare />}>
-                            <a target="_blank" href={`https://testnet.bscscan.com/address/${creamery}`} style={{ margin: 'auto' }}>
+                        <a target="_blank" href={`https://testnet.bscscan.com/address/${creamery}`} style={{ margin: 'auto' }}>
+                            <Button variant="link" className="presale-link" rightIcon={<FaRegShareSquare />}>
                                 {creamery}
-                            </a>
-                        </Button>
+                            </Button>
+                        </a>
                     </div>
                     <div className="unit-row" style={{ marginTop: '10px' }}>
                         <div className="title"><span>Ice Cream Man:</span></div>
-
-                        <Button variant="link"  className="presale-link" rightIcon={<FaRegShareSquare />}>
-                            <a target="_blank" href={`https://testnet.bscscan.com/address/${iceCreamMan}`} style={{ margin: 'auto' }}>
+                        <a target="_blank" href={`https://testnet.bscscan.com/address/${iceCreamMan}`} style={{ margin: 'auto' }}>
+                            <Button variant="link" className="presale-link" rightIcon={<FaRegShareSquare />}>
                                 {iceCreamMan}
-                            </a>
-                        </Button>
+                            </Button>
+                        </a>
                     </div>
                     <div className="unit-row" style={{ marginTop: '10px' }}>
                         <div className="title"><span>Pending Ice Cream Man:</span></div>
-
-                        <Button variant="link"  className="presale-link" rightIcon={<FaRegShareSquare />}>
-                            <a target="_blank" href={`https://testnet.bscscan.com/address/${pendingICM}`} style={{ margin: 'auto' }}>
+                        <a target="_blank" href={`https://testnet.bscscan.com/address/${pendingICM}`} style={{ margin: 'auto' }}>
+                            <Button variant="link" className="presale-link" rightIcon={<FaRegShareSquare />}>
                                 {pendingICM}
-                            </a>
-                        </Button>
+                            </Button>
+                        </a>
                     </div>
                 </> : ''
             }

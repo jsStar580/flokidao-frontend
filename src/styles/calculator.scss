@@ -1,8 +1,8 @@
-.calculator{
+.calculator {
     width: 100%;
     padding: 30px 20px 0 20px;
     text-align: center;
-    .calculator-container{
+    .calculator-container {
         width: 100%;
         max-width: 800px;
         min-height: 200px;
@@ -13,104 +13,93 @@
         padding-top: 30px;
         padding-bottom: 30px;
         background: linear-gradient(to top, #1a2230, #303f54);
-
-        .calculator-header{
+        .calculator-header {
             width: 80%;
             display: flex;
             flex-direction: column;
-            .title{
+            .title {
                 color: #fff;
-                font-weight: 700;
-                font-size: 25px;
+                font-size: 30pt;
                 font-style: normal;
-                font-family: Montserrat Bold;
+                font-family: unset;
                 text-shadow: 0 4px 4px rgb(0 0 0 / 25%);
                 text-align: left;
-                small{
-                    font-size: 22px;
-                    font-weight: 500;
-                    color:#067ab1;
-                }
             }
-            .description{
+            .description {
                 font-size: 15px;
-                color:#728ea2;
+                color: #728ea2;
                 font-style: normal;
-                font-family: Montserrat SemiBold;
-                font-weight: bold;
-                text-shadow: 0 4px 4px rgb(0 0 0 / 25%);
+                font-family: unset;
                 text-align: left;
-                
             }
         }
-        .overview-info{
+        .overview-info {
             text-align: center;
             width: 80%;
-            .info-item{
+            .info-item {
                 display: inline-block;
                 width: 33%;
                 min-width: 200px;
                 padding: 10px 0 10px 0;
                 text-align: center;
                 color: #deffff;
-                font-size:20px;
+                font-size: 20px;
                 font-family: Montserrat Bold;
                 text-shadow: 0 4px 4px rgb(0 0 0 / 25%);
-                .value{
+                .value {
                     font-family: initial;
                     font-size: 25px;
                     font-weight: bold;
                 }
             }
         }
-
-        .calculator-form{
+        .calculator-form {
             width: 80%;
             align-items: center;
             margin-top: 20px;
-            .form-item{
+            .form-item {
                 width: 100%;
                 max-width: 300px;
                 display: inline-block;
                 text-align: left;
                 margin: 10px 10px;
-                span{
+                span {
                     font-size: 15px;
-                    color:#fff;
+                    color: #fff;
                     font-style: normal;
                     font-family: Montserrat SemiBold;
                     font-weight: bold;
                     text-shadow: 0 4px 4px rgb(0 0 0 / 25%);
                     text-align: left;
-                    padding:5px 0 5px 0;
+                    padding: 5px 0 5px 0;
                 }
-                .add-element{
+                .add-element {
                     justify-content: flex-end;
-                    right:5px;
+                    right: 5px;
                 }
             }
         }
-
-        .calculator-slider{
+        .calculator-slider {
             padding-top: 20px;
-            width:80%;
-            .slider-title{
+            width: 80%;
+            .slider-title {
                 text-align: left;
-                color:#fff;
+                color: #fff;
+                font-size: 15pt;
             }
-            .mtrack{
+            .mtrack {
                 background: #232323;
                 box-shadow: 0 0 10px rgb(0 0 0 / 20%);
                 border-radius: 10px;
                 border: 1px solid #64c9fc;
-                .chakra-slider__filled-track{
+                .chakra-slider__filled-track {
                     border-top-left-radius: 10px;
                     border-bottom-left-radius: 10px;
-                    background: linear-gradient(90deg,#64c9fc,#446cf6 90%);
+                    background: linear-gradient(90deg, #64c9fc, #446cf6 90%);
                     box-shadow: 0 0 10px rgb(0 0 0 / 20%);
                 }
             }
-            .mthumb{
+            .mthumb {
                 width: 20px;
                 height: 20px;
                 background: #232323;
@@ -118,23 +107,20 @@
                 border: 2px solid #446cf6;
             }
         }
-
-        .unit-row{
+        .unit-row {
             color: #728ea2;
             font-style: normal;
             font-family: Montserrat SemiBold;
-            font-weight: bold;
-            text-shadow: 0 4px 4px rgb(0 0 0 / 25%);
             font-size: 14px;
             text-align: left;
             width: 80%;
-            .title{
-                width:45%;
+            .title {
+                width: 45%;
                 display: inline-block;
                 text-align: left;
             }
-            .value{
-                width:55%;
+            .value {
+                width: 55%;
                 display: inline-block;
                 text-align: right;
             }

@@ -20,6 +20,11 @@ export interface ThemeProps {
       presaleBack:string,
       presaleText:string,
       presaleTitle:string,
+    },
+    stake:{
+      stakeBack:string,
+      stakeText:string,
+      stakeTitle:string,
     }
   }
   
@@ -32,17 +37,22 @@ export interface ThemeProps {
     sidebarText:'white',
     pageBackground:'#f4f2ed',
     dashboard:{
-      cardBack:'#253449',
+      cardBack:'#2a3f70',
       cardText:'white'
     },
     header:{
-      actionBack:'#5c82a547',
+      actionBack:'#2a3f70',
       actionText:'#fff'
     },
     presale:{
-      presaleBack:'inear-gradient(to top, #1a2230, #303f54)',
-      presaleText:'#728ea2',
+      presaleBack:'#2a3f70',
+      presaleText:'#fff',
       presaleTitle:'white',
+    },
+    stake:{
+      stakeBack:'#2a3f70',
+      stakeText:'#fff',
+      stakeTitle:'white',
     }
     
     
@@ -57,16 +67,21 @@ export interface ThemeProps {
     sidebarText:'#253449',
     pageBackground:'#f4f2ed',
     dashboard:{
-      cardBack:'white',
+      cardBack:'#ffdf9d',
       cardText:'#253449'
     },
     header:{
-      actionBack:'#fdf1c1',
+      actionBack:'#ffdf9d',
       actionText:'#253449'
     },
     presale:{
-      presaleBack:'linear-gradient(to top,#ffffff,#e7e7e7,#fdf1c1)',
-      presaleText:'#4e5a6b',
-      presaleTitle:'#4e5a6b',
+      presaleBack:'#e2ddd3',
+      presaleText:'#2a3f70',
+      presaleTitle:'#2a3f70',
+    },
+    stake:{
+      stakeBack:'#e2ddd3',
+      stakeText:'#2a3f70',
+      stakeTitle:'#2a3f70',
     }
   };

@@ -1,10 +1,11 @@
 @import "./variables/color.scss";
-.page{
-    background:$page-background-color;
+.page {
+    background: $page-background-color;
     min-height: 100vh;
-    .page-container{
+    .page-container {
         display: flex;
         justify-content: space-around;
+        padding-top: 50px;
         padding-bottom: 20px;
     }
 }

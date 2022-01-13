@@ -1,8 +1,8 @@
-.stake{
+.stake {
     width: 100%;
     padding: 30px 20px 0 20px;
     text-align: center;
-    .stake-container{
+    .stake-container {
         width: 100%;
         max-width: 800px;
         min-height: 200px;
@@ -13,80 +13,66 @@
         padding-top: 30px;
         padding-bottom: 30px;
         background: linear-gradient(to top, #1a2230, #303f54);
-
-        .stake-header{
+        .stake-header {
             width: 80%;
             display: flex;
             flex-direction: column;
-            .title{
+            .title {
                 color: #fff;
-                font-weight: 700;
-                font-size: 25px;
+                /* font-weight: 700; */
+                font-size: 30pt;
                 font-style: normal;
-                font-family: Montserrat Bold;
+                font-family: unset;
                 text-shadow: 0 4px 4px rgb(0 0 0 / 25%);
                 text-align: left;
-                small{
-                    font-size: 22px;
-                    font-weight: 500;
-                    color:#067ab1;
-                }
             }
-            .description{
+            .description {
                 font-size: 15px;
-                color:#728ea2;
-                font-style: normal;
-                font-family: Montserrat SemiBold;
-                font-weight: bold;
-                text-shadow: 0 4px 4px rgb(0 0 0 / 25%);
+                color: #d0d1d169;
+                font-family: unset;
                 text-align: left;
-                
             }
         }
-        .overview-info{
+        .overview-info {
             text-align: center;
             width: 80%;
-            .info-item{
+            .info-item {
                 display: inline-block;
                 width: 33%;
                 min-width: 200px;
                 padding: 10px 0 10px 0;
                 text-align: center;
                 color: #deffff;
-                font-size:20px;
+                font-size: 20px;
                 font-family: Montserrat Bold;
                 text-shadow: 0 4px 4px rgb(0 0 0 / 25%);
-                .value{
+                .value {
                     font-family: initial;
                     font-size: 25px;
                     font-weight: bold;
                 }
             }
         }
-
-        .stacking-form{
+        .stacking-form {
             display: flex;
             width: 80%;
             align-items: center;
             margin-top: 20px;
         }
-
-        .unit-row{
+        .unit-row {
             color: #728ea2;
             font-style: normal;
             font-family: Montserrat SemiBold;
-            font-weight: bold;
-            text-shadow: 0 4px 4px rgb(0 0 0 / 25%);
             font-size: 14px;
             text-align: left;
             width: 80%;
-            .title{
-                width:45%;
+            .title {
+                width: 45%;
                 display: inline-block;
                 text-align: left;
             }
-            .value{
-                width:55%;
+            .value {
+                width: 55%;
                 display: inline-block;
                 text-align: right;
             }

@@ -70,7 +70,7 @@ function App() {
                 <Route path="/" element={<Page />}>
                   <Route path="/dashboard" element={<Dashboard />} />
                   <Route path="/presale" element={<Presale />} />
-                  <Route path="/stack" element={<Stake />} />
+                  <Route path="/stake" element={<Stake />} />
                   <Route path="/calculator" element={<Calculator />} />
                 </Route>
               </Routes>

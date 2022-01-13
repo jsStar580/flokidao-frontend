@@ -55,7 +55,7 @@ const PresaleMyDetails = () => {
                 typeof (holdersClaimableFLV) == "undefined" ? '' : <div className="unit-row">
                     <div className="title"><span>Purchased:</span></div>
                     <div className="value"><span>
-                        <AnimatedNumbers decimals={0} value={holdersClaimableFLV / 1e9} suffix={' FORK'} />
+                        <AnimatedNumbers decimals={0} value={holdersClaimableFLV / 1e9} suffix={' FLOK'} />
                     </span></div>
                 </div>
             }
@@ -63,7 +63,7 @@ const PresaleMyDetails = () => {
                 typeof (claimedFLV) == "undefined" ? '' : <div className="unit-row">
                     <div className="title"><span>Claimed:</span></div>
                     <div className="value"><span>
-                        <AnimatedNumbers decimals={0} value={claimedFLV / 1e9} suffix={' FORK'} />
+                        <AnimatedNumbers decimals={0} value={claimedFLV / 1e9} suffix={' FLOK'} />
                     </span></div>
                 </div>
             }
@@ -91,11 +91,11 @@ const PresaleMyDetails = () => {
                     </div>
                 }</> : ''
             }
-            <Button mt={5} variant="link" color="#fff" className="presale-link" rightIcon={<FaRegShareSquare />}>
-                <a target="_blank" href={`https://testnet.bscscan.com/address/${wallet}`} style={{ margin: 'auto' }}>
+            <a target="_blank" href={`https://testnet.bscscan.com/address/${wallet}`} style={{ margin: 'auto' }}>
+                <Button mt={5} variant="link" color="#fff" className="presale-link" rightIcon={<FaRegShareSquare />}>
                     View My Wallet on BSCScan.com
-                </a>
-            </Button>
+                </Button>
+            </a>
 
         </>
     )

@@ -1,36 +1,34 @@
 @import "./variables/color.scss";
 @import url('https://fonts.googleapis.com/css2?family=Alegreya+SC&display=swap');
-.page-header{
-    height:70px;
+.page-header {
+    height: 70px;
     display: flex;
     align-content: center;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding:100px 120px 50px 120px;
-    .page-logo{
-        font-size:65px;
-        color:black;
+    padding: 100px 120px 50px 120px;
+    .page-logo {
+        font-size: 65px;
+        color: black;
         font-family: 'Alegreya SC', serif;
-        width:350px;
-        small{
+        width: 350px;
+        small {
             font-family: 'Alegreya SC', serif;
             font-size: 55px;
         }
     }
-    .page-links{
-
-        Button{
-            color:#fff;
+    .page-links {
+        Button {
+            color: #fff;
             background-color: black;
             font-size: 18px;
             width: 150px;
             font-family: 'Alegreya SC', serif;
-            border:2px solid black;
-            &.active{
-                color:black;
+            border: 2px solid black;
+            &.active {
+                color: black;
                 background-color: #fff;
             }
         }
-        
     }
 }

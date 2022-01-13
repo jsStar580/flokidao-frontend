@@ -158,7 +158,7 @@ export default function Presale() {
                                                         </Button>
                                                     ) :
                                                         <Button mb={5} width={'60%'} className="presale-action" onClick={onOpen}>
-                                                            Contribute FORK
+                                                            Contribute FLOK
                                                         </Button>
                                                 }
                                             </>
@@ -274,7 +274,7 @@ export default function Presale() {
                                 </div>
                                 <div className="contribute-item">
                                     <span>Rate: </span>
-                                    <span><AnimatedNumbers decimals={0} value={nativePerBNB / 1e9} suffix={''} /> FORK per BNB </span>
+                                    <span><AnimatedNumbers decimals={0} value={nativePerBNB / 1e9} suffix={''} /> FLOK per BNB </span>
                                 </div>
                                 <InputGroup size='lg'>
                                     <Input
@@ -308,7 +308,7 @@ export default function Presale() {
                                 </div>
                                 <div className="contribute-item" style={{ marginTop: '15px' }}>
                                     <span>You will be able to claim:&nbsp;</span>
-                                    <span><AnimatedNumbers decimals={0} value={contributeValue * nativePerBNB / 1e9} suffix={' FORK'} /></span>
+                                    <span><AnimatedNumbers decimals={0} value={contributeValue * nativePerBNB / 1e9} suffix={' FLOK'} /></span>
                                 </div>
                             </div>
                         </ModalBody>

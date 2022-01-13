@@ -53,7 +53,7 @@ const PresaleInfo = () => {
 
     return (
         <>
-            {presaleSTART > 0 ? '' :
+            {/* {presaleSTART > 0 ? '' :
                 <h1>Progress</h1>
             }
 
@@ -61,7 +61,7 @@ const PresaleInfo = () => {
                 <div style={{marginBottom:'10px'}}>
                     <Progress variant="round" value={progress} />
                 </div>
-            }
+            } */}
             {typeof (globalTotal_contributions) == "undefined" ? '' : <div className="unit-row">
                 <div className="title"><span>Total Contributions:</span></div>
                 <div className='value'>
@@ -77,7 +77,7 @@ const PresaleInfo = () => {
             </div>
             }
             {typeof (flokiPerNativeCoin) == "undefined" ? '' : <div className="unit-row">
-                <div className="title"><span>FORK per BNB:</span></div>
+                <div className="title"><span>FLOK per BNB:</span></div>
                 <div className='value'>
                     <AnimatedNumbers decimals={0} value={flokiPerNativeCoin / 1e9} suffix={''} />
                 </div>
@@ -85,9 +85,9 @@ const PresaleInfo = () => {
             }
             {wallet !== iceCreamMan ? '' : <>
                 {typeof (globalTotal_claims) == "undefined" ? '' : <div className="unit-row">
-                    <div className="title"><span>Total FORK Claimed:</span></div>
+                    <div className="title"><span>Total FLOK Claimed:</span></div>
                     <div className='value'>
-                        <AnimatedNumbers decimals={0} value={globalTotal_claims / 1e9} suffix={' FORK'} />
+                        <AnimatedNumbers decimals={0} value={globalTotal_claims / 1e9} suffix={' FLOK'} />
                     </div>
                 </div>
                 }

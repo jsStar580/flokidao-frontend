@@ -29,9 +29,9 @@ const SidebarContent = ({ onClick }: { onClick: Function }) => (
         Presale
       </Button>
     </Link>
-    <Link to="/stack">
+    <Link to="/stake">
       <Button className="sidebar-link" leftIcon={<FaRegListAlt />} variant="link" onClick={() => { onClick() }} w="100%">
-        Stack
+        Stake
       </Button>
     </Link>
     <Link to="/calculator">
@@ -94,13 +94,17 @@ export default function SideBar(props: any) {
         <DrawerContent bgColor="#496193">
           <DrawerCloseButton onClick={() => { props.onClose() }} />
           <DrawerHeader>
-          <Link to="/"><img src='Images/Logo/logo.png' alt="logo" style={{ height: '50px' }} /><br /></Link>
-            {(wallet && wallet != "") && <small>
-              {String(wallet).substring(0, 6) +
-                "..." +
-                String(wallet).substring(38)}</small>
-            }</DrawerHeader>
-          <DrawerBody>
+            <div className="sidebar-logo">
+              <Link to="/"><img src='Images/Logo/logo1.png' alt="logo" style={{ width: '60%' }} /></Link>
+              <span>Floki Dao</span>
+              {(wallet && wallet != "") && <small>
+                {String(wallet).substring(0, 6) +
+                  "..." +
+                  String(wallet).substring(38)}</small>
+              }
+            </div>
+          </DrawerHeader>
+          <DrawerBody className='sidebar-mini'>
             <SidebarContent onClick={() => { props.onClose() }} />
             <div className="sidebar-footer">
               <ButtonGroup spacing="2">

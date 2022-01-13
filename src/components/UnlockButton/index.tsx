@@ -91,7 +91,7 @@ const UnlockButton = () => {
     }
 
     return (
-        <><Button onClick={connectWalletPressed} size="md" colorScheme="blue" variant="solid" bgColor="#5c82a547">
+        <><Button mt={2} onClick={connectWalletPressed} className="unlock-button" size="md" colorScheme="blue" variant="solid">
             Unlock Wallet
         </Button>
 

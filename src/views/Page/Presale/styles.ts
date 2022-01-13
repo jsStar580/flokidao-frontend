@@ -31,6 +31,10 @@ export const Container = styled.div`
                     }
                 }
             }
+            .unlock-button{
+                background: ${({ theme }) => theme.presale.presaleTitle} !important;
+                color:${({ theme }) => theme.presale.presaleBack} !important;
+            }
         }
     }
 `;
