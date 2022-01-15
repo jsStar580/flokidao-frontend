@@ -60,13 +60,12 @@ function App() {
     <ThemeContext>
       <ThemeProvider theme={themeMode}>
         <GlobalStyle />
-          <div style={{ position: 'fixed', bottom: '30px', right: '20px' }}>
-            <TogglerButton themeToggler={themeToggler} /></div>
+          
           <Router>
             <ChakraProvider theme={chakraTheme}>
               <Routes>
                 <Route path="" element={<Home />} />
-                <Route path="/" element={<Page />}>
+                <Route path="/" element={<Page themeToggle={themeToggler} />}>
                   <Route path="/dashboard" element={<Dashboard />} />
                   <Route path="/presale" element={<Presale />} />
                   <Route path="/stake" element={<Stake />} />

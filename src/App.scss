@@ -1,4 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Alegreya+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+SC&family=Be+Vietnam+Pro:wght@300&family=Outfit:wght@300&display=swap');
+@font-face {
+    font-family: 'Square';
+    src: local('Square'), url(./assets/fonts/EuclidSquare-Regular.woff) format('woff');
+}
+
 @import "./styles/home.scss";
 @import "./styles/page-header.scss";
 @import "./styles/pages.scss";
@@ -22,7 +27,7 @@
     border-radius: 10px;
 }
 
-* {
+.home {
     font-family: 'Alegreya SC', serif;
 }
 

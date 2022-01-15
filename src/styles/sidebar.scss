@@ -1,8 +1,8 @@
 .sidebar {
-    background: #354255eb;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    box-shadow: 7px 11px 63px rgb(255 153 0 / 10%);
 }
 
 .sidebar-mini {
@@ -13,13 +13,15 @@
 }
 
 .sidebar-logo {
-    color: #fcac05;
+    color: #f2bc07;
     display: flex;
     text-align: center;
     flex-direction: column;
     align-items: center;
-    font-size: 32pt;
-    text-shadow: 0 2px 2px rgb(162 114 12);
+    font-family: Square !important;
+    font-size: 30px;
+    font-weight: 600;
+    // text-shadow: 0 1px 1px #2a3f70;
     a {
         display: flex;
         justify-content: center;
@@ -42,11 +44,13 @@
 }
 
 .sidebar-link {
-    line-height: 30px !important;
+    line-height: 21px !important;
     width: 150px;
     color: #fff !important;
     font-weight: normal !important;
-    font-size: 22px !important;
+    font-size: 18px !important;
+    font-family: Square !important;
+    text-underline-offset: 0.23rem;
 }
 
 .sidebar-footer {

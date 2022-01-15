@@ -1,0 +1,23 @@
+<svg width="32" height="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" version="1.1">
+ <g>
+  <title>Layer 1</title>
+
+  <clipPath id="SVGID_2_">
+   <use id="svg_4" xlink:href="#SVGID_1_"/>
+  </clipPath>
+  <g stroke="null">
+   <g stroke="null">
+    <g stroke="null">
+     <defs stroke="null" transform="translate(0 2) translate(0 -8.34465e-7) translate(0 0.0000157356) translate(1.00001 0) translate(-0.00000411272 0) translate(0.0000264645 0) translate(0 100) translate(0 -800) translate(0 305) translate(0 0.0000152588) translate(0 200) translate(0 -500) translate(-500 0) translate(484 0) translate(0 484) translate(-484 0) translate(0 -484) translate(500 700) scale(0.605 0.605) translate(-500 -700) translate(826.446 504.132) scale(0.828099 0.828099) translate(-826.446 -504.132) translate(0.00000253153 -391.218) scale(0.45509 0.45509) translate(-0.00000253153 391.218) translate(0.00000556271 140.351) scale(0.149123 0.149123) translate(-0.00000556271 -140.351) translate(0.0000373028 0.0000353519) scale(0.941177 0.941177) translate(-0.0000373028 -0.0000353519)">
+      <path stroke="null" d="m500,0c276.1,0 500,223.9 500,500s-223.9,500 -500,500s-500,-223.9 -500,-500s223.9,-500 500,-500l0,0z" id="svg_9"/>
+     </defs>
+     <use stroke="null" transform="matrix(0.032 0 0 0.032 15.9361 28.6102)" x="-498.00393" y="-894.06857" xlink:href="#svg_9" fill="#0074FF" clip-rule="evenodd" fill-rule="evenodd" xlink:href="#svg_9"/>
+     <clipPath stroke="null" transform="translate(0 2) translate(0 -8.34465e-7) translate(0 0.0000157356) translate(1.00001 0) translate(-0.00000411272 0) translate(0.0000264645 0) translate(0 100) translate(0 -800) translate(0 305) translate(0 0.0000152588) translate(0 200) translate(0 -500) translate(-500 0) translate(484 0) translate(0 484) translate(-484 0) translate(0 -484) translate(500 700) scale(0.605 0.605) translate(-500 -700) translate(826.446 504.132) scale(0.828099 0.828099) translate(-826.446 -504.132) translate(0.00000253153 -391.218) scale(0.45509 0.45509) translate(-0.00000253153 391.218) translate(0.00000556271 140.351) scale(0.149123 0.149123) translate(-0.00000556271 -140.351) translate(0.0000373028 0.0000353519) scale(0.941177 0.941177) translate(-0.0000373028 -0.0000353519)" id="svg_8">
+      <use stroke="null" href="#svg_9" xlink:href="#svg_9"/>
+     </clipPath>
+    </g>
+   </g>
+   <path stroke="null" fill="#FFFFFF" clip-rule="evenodd" fill-rule="evenodd" d="m23.45603,9.31521l-0.0032,0l0,13.76961c0,0.048 -0.0064,0.0928 -0.0224,0.1376c-0.064,0.3072 -0.3136,0.5248 -0.6656,0.7136l-5.37281,2.8704c-0.2944,0.1568 -0.6624,0.2368 -1.0304,0.2368c-0.368,0 -0.736,-0.0768 -1.0304,-0.2336l-5.37281,-2.8736c-0.3808,-0.2048 -0.6112,-0.5216 -0.6432,-0.88c-0.0928,-0.32 -0.0544,-0.6624 -0.0448,-0.6944l0,-13.52321c0,-0.3936 0.2752,-0.9376 0.6848,-1.1584l5.37281,-2.8704c0.5888,-0.3136 1.4752,-0.3136 2.0608,0l0,0l5.37921,2.8704c0.4096,0.2176 0.688,0.5664 0.688,0.96c0,0 0,0.0032 0,0.0032l0.0032,0l0,0.672l-0.0032,0zm-12.89601,12.36801l4.448,-2.3744l-4.448,-2.3744l0,4.7488zm5.15841,-3.4688l0,-5.13601l-4.8096,2.5696l4.8096,2.5664zm-5.15841,-3.856l4.144,-2.2112l-4.144,-2.2144l0,4.4256zm6.23041,-8.39361c-0.2176,-0.1152 -0.64,-0.1152 -0.8576,0l-5.02401,2.6816l5.02401,2.6816c0.2176,0.1152 0.64,0.1152 0.8576,0l5.02401,-2.6816l-5.02401,-2.6816zm5.37281,3.968l-4.144,2.2112l4.144,2.2112l0,-4.4224zm-5.15521,3.1456l0,5.13601l4.8064,-2.5664l-4.8064,-2.5696zm5.15521,3.856l-4.4448,2.3744l4.4448,2.3744l0,-4.7488zm0,5.71201l-5.37281,-2.3584c-0.1088,-0.0576 -0.2688,-0.0864 -0.4288,-0.0864c-0.16,0 -0.32,0.0288 -0.4288,0.0864l-5.02401,2.6816l0.0768,0.0416l4.9504,2.6432c0.1088,0.0576 0.2688,0.0864 0.4288,0.0864c0.16,0 0.32,-0.0288 0.4288,-0.0864l4.9216,-2.6432l0.4512,-0.2432l0,-0.1216l-0.0032,0z" class="st0"/>
+  </g>
+ </g>
+</svg>

@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+    width:100%;
     .presale {
         .presale-container{
             background:${({ theme }) => theme.presale.presaleBack} !important;
@@ -31,10 +32,7 @@ export const Container = styled.div`
                     }
                 }
             }
-            .unlock-button{
-                background: ${({ theme }) => theme.presale.presaleTitle} !important;
-                color:${({ theme }) => theme.presale.presaleBack} !important;
-            }
+          
         }
     }
 `;

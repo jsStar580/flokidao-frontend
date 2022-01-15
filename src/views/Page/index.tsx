@@ -11,7 +11,7 @@ import * as S from './styles';
 const smVariant = { navigation: 'drawer', navigationButton: true }
 const mdVariant = { navigation: 'sidebar', navigationButton: false }
 
-export default function Page() {
+export default function Page(props:any) {
   const [isSidebarOpen, setSidebarOpen] = useState(true)
   const variants = useBreakpointValue({ base: smVariant, md: mdVariant })
 
@@ -29,6 +29,7 @@ export default function Page() {
         />
         <Box ml={!variants?.navigationButton ? 280 : 0}>
           <Header
+            toggleTheme={props.themeToggle}
             showSidebarButton={variants?.navigationButton}
             onShowSidebar={toggleSidebar}
           />

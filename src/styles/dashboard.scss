@@ -1,7 +1,20 @@
-.dashboard{
+.dashboard {
     display: flex;
     align-content: space-around;
     flex-wrap: wrap;
     justify-content: space-around;
-    max-width: 760px;
+    width: 100%;
+    padding-left: 3.3rem;
+    padding-right: 3.3rem;
+    .DashBoard-Info {
+        margin: 30px 0;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    @media (max-width:768px) {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
 }

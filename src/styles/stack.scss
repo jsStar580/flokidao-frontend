@@ -10,32 +10,31 @@
         display: inline-flex;
         flex-direction: column;
         align-items: center;
-        padding-top: 30px;
-        padding-bottom: 30px;
-        background: linear-gradient(to top, #1a2230, #303f54);
+        padding: 30px;
+        border: 1px solid #F2BC07;
+        box-shadow: 7px 11px 20px rgb(255 153 0 / 10%);
         .stake-header {
-            width: 80%;
+            width: 100%;
             display: flex;
             flex-direction: column;
             .title {
                 color: #fff;
-                /* font-weight: 700; */
-                font-size: 30pt;
-                font-style: normal;
-                font-family: unset;
-                text-shadow: 0 4px 4px rgb(0 0 0 / 25%);
+                font-size: 24px;
+                font-weight: 600;
+                font-family: Square !important;
                 text-align: left;
             }
             .description {
-                font-size: 15px;
+                font-size: 10px;
+                line-height: 12px;
                 color: #d0d1d169;
-                font-family: unset;
                 text-align: left;
+                font-family: Square !important;
             }
         }
         .overview-info {
             text-align: center;
-            width: 80%;
+            width: 100%;
             .info-item {
                 display: inline-block;
                 width: 33%;
@@ -43,38 +42,52 @@
                 padding: 10px 0 10px 0;
                 text-align: center;
                 color: #deffff;
-                font-size: 20px;
-                font-family: Montserrat Bold;
-                text-shadow: 0 4px 4px rgb(0 0 0 / 25%);
+                margin-top: 30px;
+                font-size: 23px;
+                font-weight: 400;
+                line-height: 29px;
+                letter-spacing: 0.4px;
+                font-family: Square !important;
                 .value {
                     font-family: initial;
-                    font-size: 25px;
+                    font-size: 1.417rem;
                     font-weight: bold;
+                    font-family: Square !important;
                 }
             }
         }
+        .chakra-tabs__tab:focus {
+            box-shadow: none !important;
+        }
+        .chakra-tabs__tab:active {
+            background: transparent;
+            box-shadow: none !important;
+        }
         .stacking-form {
             display: flex;
-            width: 80%;
+            width: 100%;
             align-items: center;
             margin-top: 20px;
+            font-family: Square !important;
         }
         .unit-row {
             color: #728ea2;
             font-style: normal;
-            font-family: Montserrat SemiBold;
+            font-family: Square !important;
             font-size: 14px;
             text-align: left;
-            width: 80%;
+            width: 100%;
             .title {
                 width: 45%;
                 display: inline-block;
                 text-align: left;
+                font-family: Square !important;
             }
             .value {
                 width: 55%;
                 display: inline-block;
                 text-align: right;
+                font-family: Square !important;
             }
         }
     }

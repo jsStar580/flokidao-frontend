@@ -183,6 +183,79 @@
             margin-bottom: 10px;
         }
     }
+    @media (max-width:1710px) {
+        .Header {
+            min-height: 6em;
+            .name {
+                font-size: 40pt;
+            }
+            .right-bar {
+                justify-content: center;
+                .social-buttons {
+                    a {
+                        img {
+                            width: 40px;
+                        }
+                    }
+                }
+            }
+        }
+        .Banner {
+            padding: 8em 5em 1em 15em;
+            .section {
+                .left-part {
+                    img {
+                        width: 350px;
+                        max-width: 100%;
+                    }
+                    .title_text {
+                        font-size: 36pt;
+                    }
+                    .description_text {
+                        font-size: 11pt;
+                    }
+                }
+                .right-part {
+                    justify-content: flex-end;
+                    img {
+                        width: 50px;
+                    }
+                }
+                .right-part.image {
+                    img {
+                        width: 600px;
+                        max-width: 100%;
+                    }
+                }
+            }
+        }
+        .Feature {
+            padding: 3em 2em 2em 2em;
+            .feature-card {
+                padding: 0px;
+                .FeatureCard {
+                    width: 300px;
+                    height: 300px;
+                    .description {
+                        font-size: 10pt;
+                    }
+                }
+            }
+        }
+        .Distribution {
+            .header {
+                font-size: 30pt;
+            }
+        }
+        .JoinDiscord {
+            height: 200px;
+            .title {
+                font-size: 20pt;
+                padding: 0 10px 0 10px;
+                text-align: center;
+            }
+        }
+    }
     @media (max-width:1280px) {
         .Banner {
             padding-left: 100px;

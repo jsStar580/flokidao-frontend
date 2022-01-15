@@ -12,7 +12,7 @@ import {
 } from '@chakra-ui/react'
 import { ButtonGroup, IconButton } from '@chakra-ui/button';
 import { SpinnerIcon } from '@chakra-ui/icons'
-import { FaBook, FaDiscord, FaGithub, FaMedium, FaRegListAlt, FaSlidersH, FaStroopwafel, FaTelegram, FaTwitter } from 'react-icons/fa';
+import { FaBook, FaBuffer, FaCog, FaDiscord, FaGithub, FaMedium, FaRegListAlt, FaSlidersH, FaStroopwafel, FaTelegram, FaTwitter } from 'react-icons/fa';
 import { useTypedSelector } from 'hooks/useTypeSelector';
 import { useEffect } from 'react';
 import * as S from './styles';
@@ -30,21 +30,26 @@ const SidebarContent = ({ onClick }: { onClick: Function }) => (
       </Button>
     </Link>
     <Link to="/stake">
-      <Button className="sidebar-link" leftIcon={<FaRegListAlt />} variant="link" onClick={() => { onClick() }} w="100%">
+      <Button className="sidebar-link" leftIcon={<FaBuffer />} variant="link" onClick={() => { onClick() }} w="100%">
         Stake
       </Button>
     </Link>
-    <Link to="/calculator">
+    {/* <Link to="/calculator">
       <Button className="sidebar-link" leftIcon={<SpinnerIcon />} variant="link" onClick={() => { onClick() }} w="100%">
         Calculator
       </Button>
     </Link>
+    <Link to="/Mint">
+      <Button className="sidebar-link" leftIcon={<FaCog />} variant="link" onClick={() => { onClick() }} w="100%">
+        Mint
+      </Button>
+    </Link> */}
 
-    <Link to="/doc">
+    <a href='https://Docs.flokidao.io' target="_blank">
       <Button mt={50} className="sidebar-link" leftIcon={<FaBook />} variant="link" onClick={() => { onClick() }} w="100%">
         Docs
       </Button>
-    </Link>
+    </a>
 
 
   </VStack>
@@ -67,8 +72,8 @@ export default function SideBar(props: any) {
 
       >
         <div className="sidebar-logo">
-          <Link to="/"><img src='Images/Logo/logo1.png' alt="logo" style={{ width: '60%' }} /></Link>
-          <span>Floki Dao</span>
+          <Link to="/"><img src='Images/Logo/logo1.png' alt="logo" style={{ width: '140px' }} /></Link>
+          <span>FLOKI DAO</span>
           {(wallet && wallet != "") && <small>
             {String(wallet).substring(0, 6) +
               "..." +
@@ -80,9 +85,10 @@ export default function SideBar(props: any) {
         <Box />
         <div className="sidebar-footer">
           <ButtonGroup spacing="2">
-            <Button variant="link"><FaTwitter /></Button>
-            <Button variant="link"><FaTelegram /></Button>
-            <Button variant="link"><FaMedium /></Button>
+            <a href='https://twitter.com/TheFlokiDao?t=gpOTMl8Pgd3kLdZpn4i0sw&s=09' target="_blank"><Button variant="link"><FaTwitter /></Button></a>
+            <a href='https://discord.gg/C9UYjPXpr8' target="_blank"><Button variant="link"><FaDiscord /></Button></a>
+            <a href='https://flokidao.medium.com' target="_blank"><Button variant="link"><FaMedium /></Button></a>
+            <a href='https://t.me/theflokidaochat' target="_blank"><Button variant="link"><FaTelegram /></Button></a>
           </ButtonGroup>
         </div>
       </Box >
@@ -108,9 +114,10 @@ export default function SideBar(props: any) {
             <SidebarContent onClick={() => { props.onClose() }} />
             <div className="sidebar-footer">
               <ButtonGroup spacing="2">
-                <Button variant="link"><FaTwitter /></Button>
-                <Button variant="link"><FaTelegram /></Button>
-                <Button variant="link"><FaMedium /></Button>
+                <a href='https://twitter.com/TheFlokiDao?t=gpOTMl8Pgd3kLdZpn4i0sw&s=09' target="_blank"><Button variant="link"><FaTwitter /></Button></a>
+                <a href='https://discord.gg/C9UYjPXpr8' target="_blank"><Button variant="link"><FaDiscord /></Button></a>
+                <a href='https://flokidao.medium.com' target="_blank"><Button variant="link"><FaMedium /></Button></a>
+                <a href='https://t.me/theflokidaochat' target="_blank"><Button variant="link"><FaTelegram /></Button></a>
               </ButtonGroup>
             </div>
           </DrawerBody>

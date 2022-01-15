@@ -5,17 +5,20 @@ import TogglerButton from '../TogglerButton';
 import ConnectWallet from '../ConnectWallet';
 import * as S from './styles';
 import { useEffect, useState } from 'react';
+import useThemeMode from 'hooks/useThemeMode';
 
 interface Props {
   onShowSidebar: Function
   showSidebarButton?: boolean
+  toggleTheme: VoidFunction
 }
 
 
 
-const Header = ({ showSidebarButton = true, onShowSidebar }: Props) => {
+const Header = ({ toggleTheme, showSidebarButton = true, onShowSidebar }: Props) => {
 
   const [scrollState, setScrollState] = useState(false);
+  const { theme, themeToggler } = useThemeMode();
 
   useEffect(() => {
     document.addEventListener('scroll', (e: Event) => {
@@ -29,8 +32,8 @@ const Header = ({ showSidebarButton = true, onShowSidebar }: Props) => {
     })
   })
   return (
-    <S.Container  className={scrollState?`Header solid`:`Header`}>
-      <Flex bg="transparent" p={4} color="white" justifyContent="center" className={showSidebarButton?'':'Header-Flex'}>
+    <S.Container className={scrollState ? `Header solid` : `Header`}>
+      <Flex bg="transparent" p={4} color="white" justifyContent="center" className={showSidebarButton ? '' : 'Header-Flex'}>
         <Box flex="1">
           {showSidebarButton && (
             <IconButton
@@ -43,14 +46,19 @@ const Header = ({ showSidebarButton = true, onShowSidebar }: Props) => {
             />
           )}
         </Box>
+
+        
+
         <Box flex="1" />
         <Center flex="1" h="40px">
-          <ButtonGroup spacing="2">
+          <ButtonGroup spacing="1" ml={1}>
             {/* <TogglerButton /> */}
-            <Button className='headerAction' leftIcon={<FaInfoCircle />} size="md" variant="solid" >FlokiDao</Button>
+            <Button className='headerAction' leftIcon={<FaInfoCircle />} size="md" variant="solid" >FLOK</Button>
             <ConnectWallet />
+            <TogglerButton themeToggler={toggleTheme} />
           </ButtonGroup>
         </Center>
+        
       </Flex>
     </S.Container>
   )

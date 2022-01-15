@@ -160,12 +160,10 @@ export default function Presale() {
                     <div className="presale-container">
                         <div className="presale-header">
                             <span className="title">
-                                Floki Presale
+                                Presale
                             </span>
                             <span className="description">
-                                Scoop up access to a flavorful variety of vetted
-                                projects and exclusive presales! Earn rewards
-                                through every melty drip.
+                                Please buy FLOK with BNB.
                             </span>
                         </div>
                         <div className="info">
@@ -186,13 +184,13 @@ export default function Presale() {
                                                             ❗️SOLD OUT❗️
                                                         </Button>
                                                     ) :
-                                                        <Button mt={3} mb={5} width={'60%'} className="presale-action" onClick={onOpen}>
+                                                        <Button mt={3} mb={5} width={'60%'} className="presale-action actionButton" onClick={onOpen}>
                                                             Contribute FLOK
                                                         </Button>
                                                 }
                                                 {
                                                     claimableFLOK > 0?(
-                                                        <Button  mt={3} mb={5} width={'60%'} className="presale-action" onClick={()=>claimPressed()}>
+                                                        <Button  mt={3} mb={5} width={'60%'} className="presale-action  actionButton" onClick={()=>claimPressed()}>
                                                             Claim FLOK
                                                         </Button>
                                                     ):''
@@ -206,7 +204,7 @@ export default function Presale() {
                                 </>
                             ) : (<UnlockButton />)
                         }
-                        <Accordion mt={4} width={'80%'} allowMultiple className="presale-detail-info">
+                        <Accordion mt={4} width={'100%'} allowMultiple className="presale-detail-info">
                             <AccordionItem className="item">
                                 {({ isExpanded }) => (
                                     <>

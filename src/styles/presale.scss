@@ -2,49 +2,43 @@
     width: 100%;
     padding: 30px 20px 0 20px;
     text-align: center;
+    font-family: Square !important;
     .presale-container {
         width: 100%;
         max-width: 800px;
         min-height: 200px;
-        border-radius: 15px;
         display: inline-flex;
         flex-direction: column;
         align-items: center;
-        padding-top: 30px;
-        padding-bottom: 30px;
-        background: #2a3f70;
+        padding: 30px;
+        border-radius: 10px;
+        border: 1px solid #F2BC07;
+        box-shadow: 7px 11px 20px rgb(255 153 0 / 10%);
         .presale-header {
-            width: 80%;
+            width: 100%;
             display: flex;
             flex-direction: column;
             .title {
                 color: #d1dee4;
-                font-size: 30pt;
-                font-style: normal;
-                font-family: unset;
-                text-shadow: 0 4px 4px rgb(0 0 0 / 25%);
-                text-align: center;
-                margin-bottom: 10px;
+                font-size: 24px;
+                font-weight: 600;
+                text-align: left;
             }
             .description {
-                font-size: 12pt;
+                font-size: 10px;
                 color: #777d81;
-                font-family: unset;
-                /* font-weight: bold; */
                 font-style: normal;
                 text-align: left;
-                padding: 15px;
             }
         }
         .overview-info {
             display: flex;
             justify-content: space-around;
-            width: 80%;
+            width: 100%;
             .info-item {
                 min-width: 120px;
                 padding: 20px 0 20px 0;
                 text-align: center;
-                font-family: Montserrat Bold;
                 color: #fff;
                 text-shadow: 0 4px 4px rgb(0 0 0 / 25%);
                 .value {
@@ -53,12 +47,11 @@
             }
         }
         .info {
-            width: 80%;
-            padding: 5px 15px;
+            width: 100%;
+            padding: 5px 0px;
             .unit-row {
                 color: #728ea2;
                 font-weight: lighter;
-                font-family: -webkit-pictograph;
                 text-align: left;
                 .title {
                     width: calc(100% - 200px);
@@ -89,14 +82,12 @@
             .item-title {
                 color: #d9dadc;
                 font-weight: normal !important;
-                font-family: -webkit-pictograph;
                 background-color: #17202e6b;
             }
             .item-body {
                 .unit-row {
                     color: #728ea2;
                     font-weight: lighter;
-                    font-family: -webkit-pictograph;
                     text-align: left;
                     .title {
                         width: calc(100% - 200px);
@@ -121,14 +112,12 @@
                 .presale-link {
                     color: #edf2f7;
                     font-weight: 300;
-                    font-family: monospace;
                     font-size: 13px;
                     width: 100%;
                     text-align: center;
                     a {
                         color: #edf2f7;
                         font-weight: 300;
-                        font-family: monospace;
                         font-size: 13px;
                         width: 100%;
                     }

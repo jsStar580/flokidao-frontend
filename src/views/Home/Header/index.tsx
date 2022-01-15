@@ -17,7 +17,6 @@ export default function Header() {
             }else{
                 setScrollState(false)
             }
-            console.log(scrollState);
         })
     })
 
@@ -27,16 +26,16 @@ export default function Header() {
                 <span className='name'>FlokiDao</span>
                 <div className='right-bar'>
                     <div className='social-buttons'>
-                        <a href="#">
+                        <a href="https://discord.gg/C9UYjPXpr8"  target="_blank">
                             <img src='Images/Home/Header/discord.png' />
                         </a>
-                        <a href="#">
+                        <a href="https://t.me/theflokidaochat"  target="_blank">
                             <img src='Images/Home/Header/telegram.png' />
                         </a>
-                        <a href="#">
+                        <a href="https://flokidao.medium.com"  target="_blank">
                             <img src='Images/Home/Header/medium.png' />
                         </a>
-                        <a href="#">
+                        <a href="https://twitter.com/TheFlokiDao?t=gpOTMl8Pgd3kLdZpn4i0sw&s=09" target="_blank">
                             <img src='Images/Home/Header/twitter.png' />
                         </a>
                     </div>
