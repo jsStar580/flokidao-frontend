@@ -44,7 +44,7 @@ export default function Calculator() {
                         </div>
                         <div className="calculator-form">
                             <div className="form-item">
-                                <span>sFLOK Account</span>
+                                <span>sFLOK Amount</span>
                                 <InputGroup size='md' className="inputWithElement">
                                     <Input
                                         pr='4.5rem'

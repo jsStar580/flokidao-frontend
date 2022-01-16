@@ -9,19 +9,16 @@ import Calculator from './views/Page/Caculator';
 import Page from './views/Page';
 import Stake from './views/Page/Stake';
 ;
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { useTypedSelector } from 'hooks/useTypeSelector';
-import { connectWallet } from 'redux/actionCreators';
 
 import ThemeContext from './contexts/ThemeContext';
 import { ThemeProvider } from 'styled-components';
-import TogglerButton from './components/TogglerButton';
 import GlobalStyle from 'styles/global';
 import { lightTheme, darkTheme } from './styles/themes';
 import useThemeMode from './hooks/useThemeMode';
+import { useAddress, useWeb3Context } from 'hooks';
 
-import useAccount from 'hooks/useAccount'
 const colors = {
   brand: {
     900: '#1a365d',
@@ -42,38 +39,44 @@ const chakraTheme = extendTheme({ colors, breakpoints })
 
 function App() {
 
-  const { account } = useAccount();
-  const dispatch = useDispatch();
-  const { wallet } = useTypedSelector((state) => state.wallet);
-
   const { theme, themeToggler } = useThemeMode();
   const themeMode = theme === 'light' ? lightTheme : darkTheme;
 
-  useEffect(() => {
-    if (account) {
-      console.log(wallet);
-      dispatch(connectWallet(account));
+  const dispatch = useDispatch();
 
+  const { connect, provider, hasCachedProvider, chainID, connected } = useWeb3Context();
+  const address = useAddress();
+
+  const [walletChecked, setWalletChecked] = useState(false);
+
+  useEffect(() => {
+    if (hasCachedProvider()) {
+      connect().then(() => {
+        setWalletChecked(true);
+      });
+    } else {
+      setWalletChecked(true);
     }
-  }, [account, wallet])
+  }, []);
+
   return (
     <ThemeContext>
       <ThemeProvider theme={themeMode}>
         <GlobalStyle />
-          
-          <Router>
-            <ChakraProvider theme={chakraTheme}>
-              <Routes>
-                <Route path="" element={<Home />} />
-                <Route path="/" element={<Page themeToggle={themeToggler} />}>
-                  <Route path="/dashboard" element={<Dashboard />} />
-                  <Route path="/presale" element={<Presale />} />
-                  <Route path="/stake" element={<Stake />} />
-                  <Route path="/calculator" element={<Calculator />} />
-                </Route>
-              </Routes>
-            </ChakraProvider>
-          </Router>
+
+        <Router>
+          <ChakraProvider theme={chakraTheme}>
+            <Routes>
+              <Route path="" element={<Home />} />
+              <Route path="/" element={<Page themeToggle={themeToggler} />}>
+                <Route path="/dashboard" element={<Dashboard />} />
+                <Route path="/presale" element={<Presale />} />
+                <Route path="/stake" element={<Stake />} />
+                <Route path="/calculator" element={<Calculator />} />
+              </Route>
+            </Routes>
+          </ChakraProvider>
+        </Router>
       </ThemeProvider>
     </ThemeContext>
   );

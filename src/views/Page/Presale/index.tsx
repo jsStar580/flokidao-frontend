@@ -29,7 +29,6 @@ import PresaleRules from "./components/IfoCard/PresaleRules";
 import PresaleTimes from "./components/IfoCard/PresaleTimes";
 
 import { usePublicPresaleFLOKIContract } from 'hooks/useContract'
-import { useTypedSelector } from 'hooks/useTypeSelector'
 import { useEffect, useState } from "react";
 import UnlockButton from "components/UnlockButton";
 import useBalanceBNB from "hooks/useBalanceBNB";
@@ -39,19 +38,20 @@ import { useMaxContribution, useMinContribution } from "hooks/usePresaleLimits";
 
 import * as S from './styles';
 import { useClaimableFLOK } from "hooks/useclaimableFLOK";
+import { useWeb3Context } from "hooks";
 
 
 export default function Presale() {
 
 
     const publicPresaleContract = usePublicPresaleFLOKIContract()
-    const { wallet } = useTypedSelector((state) => state.wallet);
+    const { address } = useWeb3Context();
 
     const balanceBNB = useBalanceBNB();
     const nativePerBNB = useFLOKIPerNativeCoin(publicPresaleContract);
     const maxContributeBNB = useMaxContribution(publicPresaleContract);
     const minContributeBNB = useMinContribution(publicPresaleContract)
-    const claimableFLOK = useClaimableFLOK(publicPresaleContract,(typeof (wallet) != "undefined" && wallet != "") ? wallet : ZERO);
+    const claimableFLOK = useClaimableFLOK(publicPresaleContract,(typeof (address) != "undefined" && address != "") ? address : ZERO);
 
     const [contributeValue, setContibuteValue] = useState(0);
 
@@ -67,7 +67,7 @@ export default function Presale() {
     const confirmPressed = async () => {
         try {
             
-            await publicPresaleContract.methods.contribute().send({ value: contributeValue * 1e18, from: wallet, gas: 200000 });
+            await publicPresaleContract.methods.contribute().send({ value: contributeValue * 1e18, from: address, gas: 200000 });
             toast({
                 variant: 'left-accent',
                 position: 'top-right',
@@ -94,7 +94,7 @@ export default function Presale() {
         console.log("claim");
         try {
             
-            await publicPresaleContract.methods.claim_OWL().send({from: wallet, gas: 200000});
+            await publicPresaleContract.methods.claim_OWL().send({from: address, gas: 200000});
             toast({
                 variant: 'left-accent',
                 position: 'top-right',
@@ -173,7 +173,7 @@ export default function Presale() {
                             <PresaleTimes />
                         </div>
                         {
-                            (wallet && wallet != "") ? (
+                            (address && address != "") ? (
                                 <>
                                     {
                                         countdownToPresale <= 0 ? (

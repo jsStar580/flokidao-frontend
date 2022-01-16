@@ -2,15 +2,15 @@ import React, { useEffect, useState } from 'react'
 import { usePublicPresaleFLOKIContract } from 'hooks/useContract';
 import AnimatedNumbers from './AnimatedNumbers';
 import { useIceCreamMan } from 'hooks/useIceCreamMan';
-import { useTypedSelector } from 'hooks/useTypeSelector'
-import { convertTimestamp } from 'utils/flokiHelpers';
+import { convertTimestamp } from 'helpers/flokiHelpers';
+import { useWeb3Context } from 'hooks';
 
 
 const PresaleTimes = () => {
 
     const publicPresaleContract = usePublicPresaleFLOKIContract()
     // GETS DATA AFTER 1 SECOND DELAY, THEN EACH SUBSEQUENT DELAY IS 6 SECONDS
-    const { wallet } = useTypedSelector((state) => state.wallet);
+    const {address} = useWeb3Context();
     const [refreshDelay, setRefreshDelay] = useState(1000)
     const [times, setState] = useState([]);
 
@@ -21,7 +21,7 @@ const PresaleTimes = () => {
             setRefreshDelay(6000)
         }, refreshDelay)
         return () => clearInterval(interval)
-    }, [refreshDelay, wallet])
+    }, [refreshDelay, address])
 
     // GETS DATA AFTER 1 SECOND DELAY, THEN EACH SUBSEQUENT DELAY IS 6 SECONDS
     const iceCreamMan = useIceCreamMan(publicPresaleContract)
@@ -43,7 +43,7 @@ const PresaleTimes = () => {
                 </div>
             </div>
             }
-            {wallet == iceCreamMan ? <>
+            {address == iceCreamMan ? <>
                 {typeof (countdownToPresaleEND) == "undefined" || countdownToPresaleEND <= 0 ? '' : <div className="unit-row">
                     <div className="title"><span>Ends In: </span></div>
                     <div className='value'>

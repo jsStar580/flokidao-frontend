@@ -1,11 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import { useCountUp } from 'react-countup'
-import { Fonts } from 'style/FlokiStyle'
 import styled from 'styled-components'
 
-export const TextData = styled.div`
-  font-family: ${Fonts.Consolas};
-`
 
 export interface AnimatedNumbersProps {
   value: number

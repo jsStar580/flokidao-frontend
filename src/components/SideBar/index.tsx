@@ -11,21 +11,21 @@ import {
   VStack,
 } from '@chakra-ui/react'
 import { ButtonGroup, IconButton } from '@chakra-ui/button';
-import { SpinnerIcon } from '@chakra-ui/icons'
-import { FaBook, FaBuffer, FaCog, FaDiscord, FaGithub, FaMedium, FaRegListAlt, FaSlidersH, FaStroopwafel, FaTelegram, FaTwitter } from 'react-icons/fa';
-import { useTypedSelector } from 'hooks/useTypeSelector';
-import { useEffect } from 'react';
+import { FaBook, FaBuffer, FaCalculator, FaCog, FaDiscord, FaDonate, FaMedium, FaTelegram, FaTwitter } from 'react-icons/fa';
+
 import * as S from './styles';
+import { HiAdjustments, HiLightningBolt, HiOutlineUsers } from 'react-icons/hi';
+import { useWeb3Context } from 'hooks';
 
 const SidebarContent = ({ onClick }: { onClick: Function }) => (
   <VStack className='sidebar-content'>
     <Link to="/dashboard">
-      <Button className="sidebar-link" leftIcon={<FaSlidersH />} variant="link" onClick={() => { onClick() }} w="100%">
+      <Button className="sidebar-link" leftIcon={<HiAdjustments />} variant="link" onClick={() => { onClick() }} w="100%">
         Dashboard
       </Button>
     </Link>
     <Link to="/presale">
-      <Button className="sidebar-link" leftIcon={<FaStroopwafel />} variant="link" onClick={() => { onClick() }} w="100%">
+      <Button className="sidebar-link" leftIcon={<FaDonate />} variant="link" onClick={() => { onClick() }} w="100%">
         Presale
       </Button>
     </Link>
@@ -34,19 +34,29 @@ const SidebarContent = ({ onClick }: { onClick: Function }) => (
         Stake
       </Button>
     </Link>
-    {/* <Link to="/calculator">
-      <Button className="sidebar-link" leftIcon={<SpinnerIcon />} variant="link" onClick={() => { onClick() }} w="100%">
+    <Link to="/Wrap">
+      <Button className="sidebar-link" leftIcon={<HiLightningBolt />} variant="link" onClick={() => { onClick() }} w="100%">
+        Wrap
+      </Button>
+    </Link>
+    <Link to="/Bond">
+      <Button className="sidebar-link" leftIcon={<FaCog />} variant="link" onClick={() => { onClick() }} w="100%">
+        Bond
+      </Button>
+    </Link>
+    <Link to="/calculator">
+      <Button className="sidebar-link" leftIcon={<FaCalculator />} variant="link" onClick={() => { onClick() }} w="100%">
         Calculator
       </Button>
     </Link>
-    <Link to="/Mint">
-      <Button className="sidebar-link" leftIcon={<FaCog />} variant="link" onClick={() => { onClick() }} w="100%">
-        Mint
+    <Box height={50} />
+    <Link to="/governance">
+      <Button  className="sidebar-link" leftIcon={<HiOutlineUsers />} variant="link" onClick={() => { onClick() }} w="100%">
+        Governance
       </Button>
-    </Link> */}
-
+    </Link>
     <a href='https://Docs.flokidao.io' target="_blank">
-      <Button mt={50} className="sidebar-link" leftIcon={<FaBook />} variant="link" onClick={() => { onClick() }} w="100%">
+      <Button className="sidebar-link" leftIcon={<FaBook />} variant="link" onClick={() => { onClick() }} w="100%">
         Docs
       </Button>
     </a>
@@ -57,7 +67,7 @@ const SidebarContent = ({ onClick }: { onClick: Function }) => (
 
 export default function SideBar(props: any) {
 
-  const { wallet } = useTypedSelector((state) => state.wallet)
+  const { address } = useWeb3Context();
 
   return props.variant === 'sidebar' ? (
     <S.Container>
@@ -74,10 +84,10 @@ export default function SideBar(props: any) {
         <div className="sidebar-logo">
           <Link to="/"><img src='Images/Logo/logo1.png' alt="logo" style={{ width: '140px' }} /></Link>
           <span>FLOKI DAO</span>
-          {(wallet && wallet != "") && <small>
-            {String(wallet).substring(0, 6) +
+          {(address && address != "") && <small>
+            {String(address).substring(0, 6) +
               "..." +
-              String(wallet).substring(38)}</small>
+              String(address).substring(38)}</small>
           }
         </div>
         <SidebarContent onClick={props.onClose} />
@@ -102,11 +112,11 @@ export default function SideBar(props: any) {
           <DrawerHeader>
             <div className="sidebar-logo">
               <Link to="/"><img src='Images/Logo/logo1.png' alt="logo" style={{ width: '60%' }} /></Link>
-              <span>Floki Dao</span>
-              {(wallet && wallet != "") && <small>
-                {String(wallet).substring(0, 6) +
+              <span>FLOKI DAO</span>
+              {(address && address != "") && <small>
+                {String(address).substring(0, 6) +
                   "..." +
-                  String(wallet).substring(38)}</small>
+                  String(address).substring(38)}</small>
               }
             </div>
           </DrawerHeader>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { usePublicPresaleFLOKIContract } from 'hooks/useContract';
 import { useIceCreamMan } from 'hooks/useIceCreamMan';
-import { useTypedSelector } from 'hooks/useTypeSelector';
+import { useWeb3Context } from 'hooks';
 
 
 const PresaleRules = () => {
@@ -10,7 +10,7 @@ const PresaleRules = () => {
     const iceCreamMan = useIceCreamMan(publicPresaleContract)
 
     // GETS DATA AFTER 1 SECOND DELAY, THEN EACH SUBSEQUENT DELAY IS 6 SECONDS
-    const { wallet } = useTypedSelector((state) => state.wallet);
+    const { address } = useWeb3Context()
     const [refreshDelay, setRefreshDelay] = useState(1000)
     const [rules, setState] = useState([]);
     useEffect(() => {
@@ -20,7 +20,7 @@ const PresaleRules = () => {
             setRefreshDelay(6000)
         }, refreshDelay)
         return () => clearInterval(interval)
-    }, [refreshDelay, wallet])
+    }, [refreshDelay, address])
     // GETS DATA AFTER 1 SECOND DELAY, THEN EACH SUBSEQUENT DELAY IS 6 SECONDS
 
     const claimsEnabled = rules[0]
@@ -102,7 +102,7 @@ const PresaleRules = () => {
                 }
             </div>
             }
-            {wallet == iceCreamMan? <>
+            {address == iceCreamMan? <>
             {typeof (shouldCheckContributionsEnabled) == "undefined" ? '' : <div className="unit-row">
                 <div className="title"><span>Contributions Enabled Enforced:</span></div>
                 {shouldCheckContributionsEnabled
@@ -112,7 +112,7 @@ const PresaleRules = () => {
             </div>
             }
             </>:''}
-            {wallet == iceCreamMan? <>
+            {address == iceCreamMan? <>
             {typeof (useTokensInContract) == "undefined" ? '' : <div className="unit-row">
                 <div className="title"><span>Use Tokens in Contract:</span></div>
                 {useTokensInContract

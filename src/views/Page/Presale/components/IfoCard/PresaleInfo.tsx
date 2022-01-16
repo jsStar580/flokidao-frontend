@@ -3,14 +3,14 @@ import { usePublicPresaleFLOKIContract } from 'hooks/useContract'
 import AnimatedNumbers from './AnimatedNumbers'
 import { useCountdownToPresaleSTART } from 'hooks/useCountdownToPresaleSTART';
 import { useIceCreamMan } from 'hooks/useIceCreamMan';
-import { useTypedSelector } from 'hooks/useTypeSelector'
 import { Progress } from '@chakra-ui/react';
+import { useWeb3Context } from 'hooks';
 
 
 const PresaleInfo = () => {
     const publicPresaleContract = usePublicPresaleFLOKIContract()
     // GETS DATA AFTER 1 SECOND DELAY, THEN EACH SUBSEQUENT DELAY IS 6 SECONDS
-    const { wallet } = useTypedSelector((state) => state.wallet);
+    const { address } = useWeb3Context();
     const [refreshDelay, setRefreshDelay] = useState(1000)
     const [info, setState] = useState([])
 
@@ -21,7 +21,7 @@ const PresaleInfo = () => {
             setRefreshDelay(6000)
         }, refreshDelay)
         return () => clearInterval(interval)
-    }, [refreshDelay, wallet])
+    }, [refreshDelay, address])
     // GETS DATA AFTER 1 SECOND DELAY, THEN EACH SUBSEQUENT DELAY IS 6 SECONDS
 
     const claimsEnabledOnBlockNumber = info[0]
@@ -83,7 +83,7 @@ const PresaleInfo = () => {
                 </div>
             </div>
             }
-            {wallet !== iceCreamMan ? '' : <>
+            {address !== iceCreamMan ? '' : <>
                 {typeof (globalTotal_claims) == "undefined" ? '' : <div className="unit-row">
                     <div className="title"><span>Total FLOK Claimed:</span></div>
                     <div className='value'>

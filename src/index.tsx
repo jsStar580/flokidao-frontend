@@ -3,13 +3,17 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Providers from './Providers';
+import { Provider } from 'react-redux';
+import store from "./store/store";
+import { Web3ContextProvider } from "./hooks";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Providers>
-      <App />
-    </Providers>
+    <Provider store={store}>
+      <Web3ContextProvider>
+        <App />
+      </Web3ContextProvider>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

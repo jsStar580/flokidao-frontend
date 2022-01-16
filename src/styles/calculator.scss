@@ -4,38 +4,36 @@
     text-align: center;
     .calculator-container {
         width: 100%;
-        max-width: 800px;
+        max-width: 832px;
         min-height: 200px;
         border-radius: 15px;
         display: inline-flex;
         flex-direction: column;
         align-items: center;
-        padding-top: 30px;
-        padding-bottom: 30px;
-        background: linear-gradient(to top, #1a2230, #303f54);
+        padding: 30px;
+        border: 1px solid #F2BC07;
+        box-shadow: 7px 11px 20px rgb(255 153 0 / 10%);
         .calculator-header {
-            width: 80%;
+            width: 100%;
             display: flex;
             flex-direction: column;
             .title {
                 color: #fff;
-                font-size: 30pt;
-                font-style: normal;
-                font-family: unset;
-                text-shadow: 0 4px 4px rgb(0 0 0 / 25%);
+                font-size: 24px;
+                font-family: Square !important;
+                font-weight: 600;
                 text-align: left;
             }
             .description {
-                font-size: 15px;
+                font-size: 10px;
                 color: #728ea2;
-                font-style: normal;
-                font-family: unset;
+                font-family: Square !important;
                 text-align: left;
             }
         }
         .overview-info {
             text-align: center;
-            width: 80%;
+            width: 100%;
             .info-item {
                 display: inline-block;
                 width: 33%;
@@ -43,23 +41,27 @@
                 padding: 10px 0 10px 0;
                 text-align: center;
                 color: #deffff;
-                font-size: 20px;
-                font-family: Montserrat Bold;
-                text-shadow: 0 4px 4px rgb(0 0 0 / 25%);
+                margin-top: 30px;
+                font-size: 23px;
+                font-weight: 400;
+                line-height: 29px;
+                letter-spacing: 0.4px;
+                font-family: Square !important;
                 .value {
                     font-family: initial;
-                    font-size: 25px;
+                    font-size: 1.417rem;
                     font-weight: bold;
+                    font-family: Square !important;
                 }
             }
         }
         .calculator-form {
-            width: 80%;
+            width: 100%;
             align-items: center;
             margin-top: 20px;
             .form-item {
                 width: 100%;
-                max-width: 300px;
+                max-width: 350px;
                 display: inline-block;
                 text-align: left;
                 margin: 10px 10px;
@@ -67,7 +69,7 @@
                     font-size: 15px;
                     color: #fff;
                     font-style: normal;
-                    font-family: Montserrat SemiBold;
+                    font-family: Square !important;
                     font-weight: bold;
                     text-shadow: 0 4px 4px rgb(0 0 0 / 25%);
                     text-align: left;
@@ -81,21 +83,22 @@
         }
         .calculator-slider {
             padding-top: 20px;
-            width: 80%;
+            width: 100%;
             .slider-title {
                 text-align: left;
                 color: #fff;
+                font-family: Square !important;
                 font-size: 15pt;
             }
             .mtrack {
                 background: #232323;
                 box-shadow: 0 0 10px rgb(0 0 0 / 20%);
                 border-radius: 10px;
-                border: 1px solid #64c9fc;
+                border: 1px solid #f2bc07;
                 .chakra-slider__filled-track {
                     border-top-left-radius: 10px;
                     border-bottom-left-radius: 10px;
-                    background: linear-gradient(90deg, #64c9fc, #446cf6 90%);
+                    background: linear-gradient(90deg, #fcfb64, #f2bc07 90%);
                     box-shadow: 0 0 10px rgb(0 0 0 / 20%);
                 }
             }
@@ -104,16 +107,16 @@
                 height: 20px;
                 background: #232323;
                 box-shadow: 0 0 10px rgb(0 0 0 / 20%);
-                border: 2px solid #446cf6;
+                border: 2px solid #e5b616
             }
         }
         .unit-row {
             color: #728ea2;
             font-style: normal;
-            font-family: Montserrat SemiBold;
+            font-family: Square !important;
             font-size: 14px;
             text-align: left;
-            width: 80%;
+            width: 100%;
             .title {
                 width: 45%;
                 display: inline-block;

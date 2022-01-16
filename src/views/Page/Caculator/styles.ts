@@ -15,7 +15,10 @@ export const Container = styled.div`
             }
             .overview-info{
                 .info-item{
-                    color:${({ theme }) => theme.stake.stakeText};
+                    color:${({ theme }) => theme.markColor.title};
+                    .value{
+                        color:${({ theme }) => theme.markColor.value};
+                    }
                 }
             }
             .calculator-form{

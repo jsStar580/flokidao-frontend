@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react'
 import { usePublicPresaleFLOKIContract } from 'hooks/useContract';
 import { Button } from '@chakra-ui/react';
 import { FaRegShareSquare } from 'react-icons/fa';
-import { useTypedSelector } from 'hooks/useTypeSelector';
+import { useWeb3Context } from 'hooks';
+
 
 export const ZERO = '0x0000000000000000000000000000000000000000'
 
@@ -10,7 +11,7 @@ const PresaleAddresses = () => {
 
     const publicPresaleContract = usePublicPresaleFLOKIContract()
     // GETS DATA AFTER 1 SECOND DELAY, THEN EACH SUBSEQUENT DELAY IS 6 SECONDS
-    const { wallet } = useTypedSelector((state) => state.wallet);
+    const { address } = useWeb3Context();
     const [refreshDelay, setRefreshDelay] = useState(1000)
     const [addresses, setState] = useState([]);
 
@@ -21,7 +22,7 @@ const PresaleAddresses = () => {
             setRefreshDelay(6000)
         }, refreshDelay)
         return () => clearInterval(interval)
-    }, [refreshDelay, wallet])
+    }, [refreshDelay, address])
 
     // GETS DATA AFTER 1 SECOND DELAY, THEN EACH SUBSEQUENT DELAY IS 6 SECONDS
     const presaleFLOKI = addresses[0]
@@ -49,7 +50,7 @@ const PresaleAddresses = () => {
                     </a>
                 }
             </div>
-            {wallet == iceCreamMan ? <>
+            {address == iceCreamMan ? <>
                 <div className="unit-row" style={{ marginTop: '10px' }}>
                     <div className="title"><span>Token:</span></div>
                     <a target="_blank" href={`https://testnet.bscscan.com/address/${floki}`} style={{ margin: 'auto' }}>
@@ -72,7 +73,7 @@ const PresaleAddresses = () => {
                 </div>
             }
             {
-                wallet == iceCreamMan ? <>
+                address == iceCreamMan ? <>
                     <div className="unit-row" style={{ marginTop: '10px' }}>
                         <div className="title"><span>Creamery:</span></div>
                         <a target="_blank" href={`https://testnet.bscscan.com/address/${creamery}`} style={{ margin: 'auto' }}>

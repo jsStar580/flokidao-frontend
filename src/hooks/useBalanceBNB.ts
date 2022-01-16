@@ -1,11 +1,11 @@
 
 import { useEffect, useState } from 'react';
-import { useTypedSelector } from 'hooks/useTypeSelector'
 import Web3 from 'web3';
+import { useWeb3Context } from './web3';
 
 // flavors
 const useBalanceBNB = () => {
-  const { wallet } = useTypedSelector((state) => state.wallet);
+  const {address} = useWeb3Context();
   const web3 = new Web3(Web3.givenProvider || "http://localhost:4000");
   const [state, setState] = useState(0)
 
@@ -14,11 +14,11 @@ const useBalanceBNB = () => {
       const bnbBalance = await web3.eth.getBalance(wallet)
       setState(Number(bnbBalance))
     }
-    if(wallet!=""){
-        fetchBalanceBNB(wallet)
+    if(address!=""){
+        fetchBalanceBNB(address)
     }
     
-  }, [wallet])
+  }, [address])
   return state
 }
 

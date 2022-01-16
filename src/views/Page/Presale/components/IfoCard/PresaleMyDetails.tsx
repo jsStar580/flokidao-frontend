@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
-import { useTypedSelector } from 'hooks/useTypeSelector';
 import { usePublicPresaleFLOKIContract } from 'hooks/useContract';
 import AnimatedNumbers from './AnimatedNumbers';
 import { useRefundsEnabled } from 'hooks/useRefundsEnabled';
 import { ZERO } from './PresaleAddresses';
 import { Button } from '@chakra-ui/react';
 import { FaRegShareSquare } from 'react-icons/fa';
+import { useWeb3Context } from 'hooks';
 
 
 const PresaleMyDetails = () => {
@@ -13,17 +13,17 @@ const PresaleMyDetails = () => {
     const publicPresaleContract = usePublicPresaleFLOKIContract()
     const refundsEnabled = useRefundsEnabled(publicPresaleContract)
     // GETS DATA AFTER 1 SECOND DELAY, THEN EACH SUBSEQUENT DELAY IS 6 SECONDS
-    const { wallet } = useTypedSelector((state) => state.wallet);
+    const { address } = useWeb3Context();
     const [refreshDelay, setRefreshDelay] = useState(1000)
     const [state, setState] = useState([]);
     useEffect(() => {
         const interval = setInterval(async () => {
-            const _state = await publicPresaleContract.methods.getHolderInfo((typeof (wallet) != "undefined" && wallet != "") ? wallet : ZERO).call()
+            const _state = await publicPresaleContract.methods.getHolderInfo((typeof (address) != "undefined" && address != "") ? address : ZERO).call()
             setState(_state)
             setRefreshDelay(6000)
         }, refreshDelay)
         return () => clearInterval(interval)
-    }, [refreshDelay, wallet])
+    }, [refreshDelay, address])
     // GETS DATA AFTER 1 SECOND DELAY, THEN EACH SUBSEQUENT DELAY IS 6 SECONDS
 
     const remainingBNBcontribution = state[0]
@@ -91,7 +91,7 @@ const PresaleMyDetails = () => {
                     </div>
                 }</> : ''
             }
-            <a target="_blank" href={`https://testnet.bscscan.com/address/${wallet}`} style={{ margin: 'auto' }}>
+            <a target="_blank" href={`https://testnet.bscscan.com/address/${address}`} style={{ margin: 'auto' }}>
                 <Button mt={5} variant="link" color="#fff" className="presale-link" rightIcon={<FaRegShareSquare />}>
                     View My Wallet on BSCScan.com
                 </Button>

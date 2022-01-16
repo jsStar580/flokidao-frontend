@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { usePublicPresaleFLOKIContract } from 'hooks/useContract'
 import AnimatedNumbers from './AnimatedNumbers';
-import { useTypedSelector } from 'hooks/useTypeSelector'
 
 const PresaleLimits = () => {
-    const { wallet } = useTypedSelector((state) => state.wallet)
     const presaleContract = usePublicPresaleFLOKIContract()
     const [refreshDelay, setRefreshDelay] = useState(1000)
     const [limits, setLimits] = useState([]);
@@ -19,7 +17,7 @@ const PresaleLimits = () => {
         }, refreshDelay)
         return () => clearInterval(interval)
 
-    }, [refreshDelay, wallet])
+    }, [refreshDelay])
 
     const softCap = limits[0]
     const softCapHit = limits[1]
