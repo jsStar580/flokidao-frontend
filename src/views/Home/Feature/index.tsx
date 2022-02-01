@@ -29,7 +29,7 @@ export default function Feature() {
                             will further add value to the DAO these projects will be vetted by admins and put through the dao for approval. 
                             This is a new form of adding value to a already profitable protocol.
                         </div>
-                        <Button mt={5} rightIcon={<FaArrowRight />} >See All Features</Button>
+                        <a href='https://flokidao.medium.com' target="_blank"><Button mt={5} rightIcon={<FaArrowRight />} >See All Features</Button></a>
                     </div>
                 </div>
                 <div className='feature-card'>

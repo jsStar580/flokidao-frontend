@@ -17,7 +17,7 @@ export default function Distribution() {
              <div className="Distribution">
                 <div className='header'>
                     <span className="title">Distribution</span>
-                    <Button rightIcon={<FaArrowRight />}>Read More</Button>
+                    <a href='https://flokidao.medium.com' target="_blank"><Button rightIcon={<FaArrowRight />}>Read More</Button></a>
                 </div>
                 <div className='body'>
                     <img src='Images/Home/Distribution/pie.svg' width="100%" />

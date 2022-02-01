@@ -29,7 +29,7 @@ export default function Info() {
                           The token will have voting and power of major protocaol decisions and treasury managment.`           
         },
         {
-            cat:"irculating supply",
+            cat:"circulating supply",
             title:  "10,000,000",
             description: `At launch Floki DAO will have a diluted supply of 10,000,000 $FLOK`           
         },

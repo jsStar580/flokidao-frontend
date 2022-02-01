@@ -23,7 +23,7 @@ const Header = ({ toggleTheme, showSidebarButton = true, onShowSidebar }: Props)
   useEffect(() => {
     document.addEventListener('scroll', (e: Event) => {
       const state = document.scrollingElement?.scrollTop ? document.scrollingElement?.scrollTop : 0;
-      if (state > 50) {
+      if (state > 10) {
         setScrollState(true)
       } else {
         setScrollState(false)

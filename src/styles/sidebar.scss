@@ -18,8 +18,8 @@
     text-align: center;
     flex-direction: column;
     align-items: center;
-    font-family: Square !important;
-    font-size: 30px;
+    font-family: 'Alegreya SC', serif !important;
+    font-size: 36px;
     font-weight: 600;
     // text-shadow: 0 1px 1px #2a3f70;
     a {
@@ -31,6 +31,7 @@
         font-size: 13px;
         text-shadow: none;
         font-weight: 100;
+        font-family: Square !important;
     }
 }
 

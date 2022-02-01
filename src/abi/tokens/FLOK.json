@@ -129,6 +129,17 @@
             "type": "event"
         },
         {
+            "anonymous": false,
+            "inputs": [{
+                "indexed": false,
+                "internalType": "address",
+                "name": "holder",
+                "type": "address"
+            }],
+            "name": "WhitelistedHolder",
+            "type": "event"
+        },
+        {
             "inputs": [],
             "name": "DOMAIN_SEPARATOR",
             "outputs": [{
@@ -148,23 +159,6 @@
                 "type": "bytes32"
             }],
             "stateMutability": "view",
-            "type": "function"
-        },
-        {
-            "inputs": [{
-                    "internalType": "address",
-                    "name": "account_",
-                    "type": "address"
-                },
-                {
-                    "internalType": "uint256",
-                    "name": "amount_",
-                    "type": "uint256"
-                }
-            ],
-            "name": "_burnFrom",
-            "outputs": [],
-            "stateMutability": "nonpayable",
             "type": "function"
         },
         {
@@ -340,6 +334,21 @@
         },
         {
             "inputs": [{
+                "internalType": "address",
+                "name": "holder",
+                "type": "address"
+            }],
+            "name": "isWhitelisted",
+            "outputs": [{
+                "internalType": "bool",
+                "name": "",
+                "type": "bool"
+            }],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [{
                     "internalType": "address",
                     "name": "account_",
                     "type": "address"
@@ -480,6 +489,24 @@
         },
         {
             "inputs": [],
+            "name": "toggleEnforceWhitelist_OVAULT",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [{
+                "internalType": "address",
+                "name": "holder",
+                "type": "address"
+            }],
+            "name": "toggleWhitelisted_OVAULT",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [],
             "name": "totalSupply",
             "outputs": [{
                 "internalType": "uint256",
@@ -576,6 +603,17 @@
                 "internalType": "address",
                 "name": "",
                 "type": "address"
+            }],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "whitelistState",
+            "outputs": [{
+                "internalType": "bool",
+                "name": "",
+                "type": "bool"
             }],
             "stateMutability": "view",
             "type": "function"

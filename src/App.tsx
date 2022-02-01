@@ -18,6 +18,7 @@ import GlobalStyle from 'styles/global';
 import { lightTheme, darkTheme } from './styles/themes';
 import useThemeMode from './hooks/useThemeMode';
 import { useAddress, useWeb3Context } from 'hooks';
+import Ventures from 'views/Page/Ventures';
 
 const colors = {
   brand: {
@@ -73,6 +74,7 @@ function App() {
                 <Route path="/presale" element={<Presale />} />
                 <Route path="/stake" element={<Stake />} />
                 <Route path="/calculator" element={<Calculator />} />
+                <Route path="/ventures" element={<Ventures />} />
               </Route>
             </Routes>
           </ChakraProvider>

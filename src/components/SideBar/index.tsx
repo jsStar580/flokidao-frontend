@@ -15,6 +15,7 @@ import { FaBook, FaBuffer, FaCalculator, FaCog, FaDiscord, FaDonate, FaMedium, F
 
 import * as S from './styles';
 import { HiAdjustments, HiLightningBolt, HiOutlineUsers } from 'react-icons/hi';
+import {SiCountingworkspro} from 'react-icons/si';
 import { useWeb3Context } from 'hooks';
 
 const SidebarContent = ({ onClick }: { onClick: Function }) => (
@@ -34,7 +35,7 @@ const SidebarContent = ({ onClick }: { onClick: Function }) => (
         Stake
       </Button>
     </Link>
-    <Link to="/Wrap">
+    {/* <Link to="/Wrap">
       <Button className="sidebar-link" leftIcon={<HiLightningBolt />} variant="link" onClick={() => { onClick() }} w="100%">
         Wrap
       </Button>
@@ -43,18 +44,23 @@ const SidebarContent = ({ onClick }: { onClick: Function }) => (
       <Button className="sidebar-link" leftIcon={<FaCog />} variant="link" onClick={() => { onClick() }} w="100%">
         Bond
       </Button>
-    </Link>
+    </Link> */}
     <Link to="/calculator">
       <Button className="sidebar-link" leftIcon={<FaCalculator />} variant="link" onClick={() => { onClick() }} w="100%">
         Calculator
       </Button>
     </Link>
     <Box height={50} />
-    <Link to="/governance">
+    <Link to="/ventures">
+      <Button className="sidebar-link" leftIcon={<SiCountingworkspro />} variant="link" onClick={() => { onClick() }} w="100%">
+        Ventures
+      </Button>
+    </Link>
+    <a href="https://snapshot.org" target="_blank">
       <Button  className="sidebar-link" leftIcon={<HiOutlineUsers />} variant="link" onClick={() => { onClick() }} w="100%">
         Governance
       </Button>
-    </Link>
+    </a>
     <a href='https://Docs.flokidao.io' target="_blank">
       <Button className="sidebar-link" leftIcon={<FaBook />} variant="link" onClick={() => { onClick() }} w="100%">
         Docs
@@ -83,7 +89,7 @@ export default function SideBar(props: any) {
       >
         <div className="sidebar-logo">
           <Link to="/"><img src='Images/Logo/logo1.png' alt="logo" style={{ width: '140px' }} /></Link>
-          <span>FLOKI DAO</span>
+          <span>FlokiDao</span>
           {(address && address != "") && <small>
             {String(address).substring(0, 6) +
               "..." +
@@ -112,7 +118,7 @@ export default function SideBar(props: any) {
           <DrawerHeader>
             <div className="sidebar-logo">
               <Link to="/"><img src='Images/Logo/logo1.png' alt="logo" style={{ width: '60%' }} /></Link>
-              <span>FLOKI DAO</span>
+              <span>FlokiDao</span>
               {(address && address != "") && <small>
                 {String(address).substring(0, 6) +
                   "..." +

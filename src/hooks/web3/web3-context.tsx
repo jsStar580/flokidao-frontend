@@ -67,6 +67,9 @@ export const Web3ContextProvider: React.FC<{ children: ReactElement }> = ({ chil
                         },
                     },
                 },
+                binancechainwallet:{
+                    package: true
+                }
             },
         }),
     );

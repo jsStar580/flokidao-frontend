@@ -16,7 +16,7 @@ export default function JoinDiscord() {
         <S.Container>
              <div className="JoinDiscord">
                 <span className='title'>To Get Latest Announcement<br />Join our Discord Today</span>
-                <Button size="lg" bg="#f2b42a" paddingLeft={20} paddingRight={20}>Join</Button>
+                <a href='https://discord.gg/C9UYjPXpr8' target="_blank"><Button size="lg" bg="#f2b42a" paddingLeft={20} paddingRight={20}>Join</Button></a>
                 
             </div>
         </S.Container>

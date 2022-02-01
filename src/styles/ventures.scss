@@ -1,0 +1,36 @@
+.ventures {
+    width: 100%;
+    padding: 30px 20px 0 20px;
+    text-align: center;
+    .ventures-container {
+        width: 100%;
+        max-width: 832px;
+        min-height: 200px;
+        border-radius: 15px;
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px;
+        border: 1px solid #F2BC07;
+        box-shadow: 7px 11px 20px rgb(255 153 0 / 10%);
+        .ventures-header {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            .title {
+                color: #fff;
+                font-size: 24px;
+                font-weight: 600;
+                font-family: Square !important;
+                text-align: left;
+            }
+            .description {
+                font-size: 10px;
+                line-height: 12px;
+                color: #d0d1d169;
+                text-align: left;
+                font-family: Square !important;
+            }
+        }
+    }
+}

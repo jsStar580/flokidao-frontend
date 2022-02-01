@@ -25,7 +25,7 @@ export default function Banner() {
                             $FLOK
                         </div>
                         <div className='description_text'>
-                            The best reserve currencey protoco. Launching with<br />
+                            The best reserve currencey protocol. Launching with<br />
                             the greatest APY on Binance Smart Chain
                         </div>
                     </div>
