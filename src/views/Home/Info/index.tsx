@@ -26,7 +26,7 @@ export default function Info() {
             cat:"Symbol",
             title:  "$FLOK",
             description: `$FLOK is the native governance and token of Floki DAO.. 
-                          The token will have voting and power of major protocaol decisions and treasury managment.`           
+                          The token will have voting and power of major protocol decisions and treasury managment.`           
         },
         {
             cat:"circulating supply",
